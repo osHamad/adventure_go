@@ -15,5 +15,5 @@ document.getElementById('mute-button').addEventListener('click', function(){
 
 // button to start and play the game
 document.getElementById('play-button').addEventListener('click', function(){
-  window.location.href = '/levels/level-1.html'
+  window.location.href = '/level-selector.html'
 })

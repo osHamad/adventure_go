@@ -1,9 +1,7 @@
 class Cell {
-  constructor (row, col, boardWidth=8, boardHeight=6) {
+  constructor (row, col) {
     this.row = row;
     this.col = col;
-    this.boardWidth = boardWidth;
-    this.boardHeight = boardHeight;
   }
 
   cellName () {
@@ -18,8 +16,8 @@ class Cell {
     return this.row
   }
 
-  right (){
-    if (this.col < this.boardWidth){
+  right (width){
+    if (this.col < width){
       this.col ++
     }
   }
@@ -30,9 +28,9 @@ class Cell {
     }
   }
 
-  down (){
+  down (height){
     console.log()
-    if (this.row < this.boardHeight){
+    if (this.row < height){
       this.row ++
     }
   }
@@ -57,9 +55,9 @@ document.addEventListener('keydown', function(event){
 })
 
 for (i = 1; i <= 6; i++) {
-  var tableRow = document.createElement("tr");
+  let tableRow = document.createElement("tr");
   tableRow.id = `row-${i}`
-  var table = document.getElementById("grid");
+  let table = document.getElementById("grid");
   table.appendChild(tableRow);
   for (j = 1; j <= 8; j++) {
     let tableCell = document.createElement('td')
@@ -72,7 +70,7 @@ let currentCell = new Cell(1, 1)
 document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
 function goRight(){
   document.getElementById(currentCell.cellName()).style.backgroundColor = 'white'
-  currentCell.right()
+  currentCell.right(8)
   document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
 }
 
@@ -84,7 +82,7 @@ function goLeft(){
 
 function goDown(){
   document.getElementById(currentCell.cellName()).style.backgroundColor = 'white'
-  currentCell.down()
+  currentCell.down(6)
   document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
 }
 
@@ -93,3 +91,5 @@ function goUp(){
   currentCell.up()
   document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
 }
+
+document.getElementById(new Cell(5,5).cellName()).style.backgroundColor = 'blue'
