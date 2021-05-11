@@ -44,10 +44,18 @@ for (i = 1; i <= board.getHeight(); i++) {
   for (j = 1; j <= board.getWidth(); j++) {
     // creating table cell with id cell-i-j
     let tableCell = document.createElement('td')
-    tableCell.id = `cell-${i}-${j}`
 
     // adding the cell to row i
     tableRow.appendChild(tableCell)
+
+    let tableImage = document.createElement('img')
+
+    tableImage.id = `cell-${i}-${j}`
+
+    tableCell.appendChild(tableImage)
+
+    tableImage.src = 'images/floor-tile.png'
+    
   }
 }
 
@@ -59,37 +67,55 @@ for (i = 1; i <= board.getHeight(); i++) {
 }
 
 // making player into a red cell
-document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
+document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
 
 // creating obstacle object
-document.getElementById(new Player(5,5).cellName()).style.backgroundColor = 'blue'
-
 board.getCell([5, 5]).assignType('exit')
+
+document.getElementById(board.getCell([5, 5]).cellName()).src = 'images/main-character.png'
+
+board.getCell([2, 2]).assignType('break')
+
+document.getElementById(board.getCell([2, 2]).cellName()).src = 'images/barrel.png'
+
+board.getCell([4, 1]).assignType('break')
+
+document.getElementById(board.getCell([4, 1]).cellName()).src = 'images/barrel.png'
+
+board.getCell([5, 1]).assignType('block')
+
+document.getElementById(board.getCell([5, 1]).cellName()).src = 'images/rock.png'
+board.getCell([6, 6]).assignType('block')
+
+document.getElementById(board.getCell([6, 6]).cellName()).src = 'images/rock.png'
+board.getCell([2, 6]).assignType('block')
+
+document.getElementById(board.getCell([2, 6]).cellName()).src = 'images/rock.png'
 
 // function to go right
 function goRight(){
-  document.getElementById(currentCell.cellName()).style.backgroundColor = 'white'
+  document.getElementById(currentCell.cellName()).src = 'images/floor-tile.png'
   currentCell.right(board.getWidth())
-  document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
+  document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
 }
 
 // function to go left
 function goLeft(){
-  document.getElementById(currentCell.cellName()).style.backgroundColor = 'white'
+  document.getElementById(currentCell.cellName()).src = 'images/floor-tile.png'
   currentCell.left()
-  document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
+  document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
 }
 
 // function to go down
 function goDown(){
-  document.getElementById(currentCell.cellName()).style.backgroundColor = 'white'
+  document.getElementById(currentCell.cellName()).src = 'images/floor-tile.png'
   currentCell.down(board.getHeight())
-  document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
+  document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
 }
 
 // function to go up
 function goUp(){
-  document.getElementById(currentCell.cellName()).style.backgroundColor = 'white'
+  document.getElementById(currentCell.cellName()).src = 'images/floor-tile.png'
   currentCell.up()
-  document.getElementById(currentCell.cellName()).style.backgroundColor = 'red'
+  document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
 }
