@@ -13,6 +13,14 @@ document.getElementById('mute-button').addEventListener('click', function () {
   }
 })
 
+// this is the function that will play music when menu loads
+function playMenuMusic () {
+  let menuMusic = document.getElementById('music')
+  menuMusic.loop = true
+  menuMusic.volume = 0.2
+  menuMusic.play()
+}
+
 // button to start and play the game
 document.getElementById('play-button').addEventListener('click', function(){
   window.location.href = '/level-selector.html'
@@ -22,14 +30,14 @@ document.getElementById('play-button').addEventListener('click', function(){
 document.getElementById('play-button').addEventListener('mouseover', hoverSound)
 document.getElementById('settings-button').addEventListener('mouseover', hoverSound)
 document.getElementById('code-button').addEventListener('mouseover', hoverSound)
-
+document.getElementById('text-box-next').addEventListener('click', clickSound)
 
 function hoverSound () {
   const sound = document.getElementById('hover-sound')
   sound.play()
 }
 
-function clcikSound () {
+function clickSound () {
   const sound = document.getElementById('click-sound')
   sound.play()
 }
@@ -63,17 +71,17 @@ const visualImages = {
 }
 
 document.getElementById('text-box-next').addEventListener('click', nextFrame)
-function nextFrame (){
+function nextFrame () {
   if (visualCounter < visualScript.length) {
     let text = document.getElementById('text-box-text')
     text.innerText = visualScript[visualCounter]
-    console.log(visualCounter)
     document.getElementById('image-1').src = visualImages[visualCounter]
     visualCounter ++
     
   } else {
     document.getElementById('visual-novel').style.display = 'none'
     document.getElementById('start-menu').style.display = 'block'
+    playMenuMusic()
   }
   return 0
 }
