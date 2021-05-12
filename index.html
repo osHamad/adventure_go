@@ -7,16 +7,30 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <button id="mute-button">muted</button>
-    <p id="game-title">Final Project</p>
-    <div id="button-block">
-    <button id="play-button">Play</button>
-    <button id="settings-button">Settings</button>
-    <button id="code-button">Code</button>
+    <div id="visual-novel">
+      <img id="image-1" src="visual-novel/first.png" alt="first_image">
+      <!--
+      <img id="image-2" src="visual-novel/second.png" alt="second_image">
+      <img id="image-3" src="visual-novel/third.png" alt="third_image">
+      <img id="image-4" src="visual-novel/fourth.png" alt="fourth_image">
+      <img id="image-5" src="visual-novel/fifth.png" alt="fifth_image"-->
+      <div id="text-box">
+      <button id="text-box-next">next</button>
+      <p id="text-box-text">...</p></div>
     </div>
-    <audio id="music" src="/music/menu-theme.mp3"></audio>
-    <audio id="click-sound" src="/sfx/click-button.mp3"></audio>
-    <audio id="hover-sound" src="/sfx/hover-button.mp3"></audio>
-    <script src="script.js"></script>
+
+    <div id="start-menu">
+      <button id="mute-button">muted</button>
+      <p id="game-title">Final Project</p>
+      <div id="button-block">
+      <button id="play-button">Play</button>
+      <button id="settings-button">Settings</button>
+      <button id="code-button">Code</button>
+      </div>
+      <audio id="music" src="/music/menu-theme.mp3"></audio>
+      <audio id="click-sound" src="/sfx/click-button.mp3"></audio>
+      <audio id="hover-sound" src="/sfx/hover-button.mp3"></audio>
+      <script src="script.js"></script>
+    </div>
   </body>
 </html>
