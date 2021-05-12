@@ -1,5 +1,9 @@
+// board that will be accessed later to make the level
+// board is an array of generated cell objects
+let board = new Board(8, 6)
+
 // creating a new player object
-let currentCell = new Player(1, 7, movesLeft=50)
+let currentCell = new Player(1, 7, board, 16)
 
 
 document.addEventListener('keydown', function(event){
@@ -26,10 +30,6 @@ document.addEventListener('keydown', function(event){
     document.getElementById('grid').style.display = 'none'
   }
 })
-
-// board that will be accessed later to make the level
-// board is an array of generated cell objects
-board = new Board(8, 6)
 
 // creating cell divs in html
 for (i = 1; i <= board.getHeight(); i++) {

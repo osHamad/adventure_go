@@ -1,10 +1,11 @@
 // this is the player class
 // your character's information and functions are stored and executed here
 class Player {
-  constructor (row, col, movesLeft=0) {
+  constructor (row, col, board, movesLeft) {
     // row and column to help identify the player's current location
     this.row = row;
     this.col = col;
+    this.board = board
     this.characterImage = './images/character.png'
     this.floorImage = './images/granite-floor.png'
 
@@ -41,7 +42,7 @@ class Player {
 
   // method to check if path is blocked, either block or void
   checkForBlock (futureLocation) {
-    let isBlockType = board.getCell(futureLocation).getType()
+    let isBlockType = this.board.getCell(futureLocation).getType()
     if (isBlockType === 'block' || isBlockType === 'void') {
       return true
     } else {
@@ -51,7 +52,7 @@ class Player {
 
   // checks if the cell infront is breakable
   checkForBreak (futureLocation) {
-    let isBreakType = board.getCell(futureLocation)
+    let isBreakType = this.board.getCell(futureLocation)
     if (isBreakType.getType() === 'break') {
       isBreakType.assignType('walk')
       isBreakType.createCell('walk')
@@ -63,7 +64,7 @@ class Player {
 
   // checks if the exit was reached
   checkForExit (futureLocation) {
-    let isExitType = board.getCell(futureLocation).getType()
+    let isExitType = this.board.getCell(futureLocation).getType()
     if (isExitType === 'exit') {
       return true
     } else {
