@@ -70,27 +70,18 @@ for (i = 1; i <= board.getHeight(); i++) {
 document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
 
 // creating obstacle object
-board.getCell([5, 5]).assignType('exit')
+board.getCell([5, 5]).createCell('exit')
 
-document.getElementById(board.getCell([5, 5]).cellName()).src = 'images/main-character.png'
+board.getCell([2, 2]).createCell('break')
 
-board.getCell([2, 2]).assignType('break')
+board.getCell([4, 1]).createCell('break')
 
-document.getElementById(board.getCell([2, 2]).cellName()).src = 'images/barrel.png'
+board.getCell([5, 1]).createCell('block')
 
-board.getCell([4, 1]).assignType('break')
+board.getCell([6, 6]).createCell('block')
 
-document.getElementById(board.getCell([4, 1]).cellName()).src = 'images/barrel.png'
+board.getCell([2, 6]).createCell('block')
 
-board.getCell([5, 1]).assignType('block')
-
-document.getElementById(board.getCell([5, 1]).cellName()).src = 'images/rock.png'
-board.getCell([6, 6]).assignType('block')
-
-document.getElementById(board.getCell([6, 6]).cellName()).src = 'images/rock.png'
-board.getCell([2, 6]).assignType('block')
-
-document.getElementById(board.getCell([2, 6]).cellName()).src = 'images/rock.png'
 
 // function to go right
 function goRight(){

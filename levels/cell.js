@@ -9,6 +9,13 @@ class Cell {
     // each cell has a different game attribute
     // types include block, break, exit, key, walk, void, locked
     this.cellType = cellType
+
+    this.cellTypeImage = {
+      'walk': 'images/floor-tile.png',
+      'block': 'images/rock.png',
+      'break': 'images/barrel.png',
+      'exit': 'images/main-character.png',
+    }
   }
 
   // this method returns the html id used for the specified cell
@@ -34,5 +41,11 @@ class Cell {
   // assigns or changes the type of the cell
   assignType (newType) {
     this.cellType = newType
+  }
+
+  createCell (newType) {
+    this.assignType(newType)
+
+    document.getElementById(this.cellName()).src = this.cellTypeImage[this.getType()]
   }
 }
