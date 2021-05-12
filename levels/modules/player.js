@@ -23,7 +23,7 @@ class Player {
 
   // this checks if there are any moves left
   isMovesLeft () {
-    if (this.movesLeft === 0) {
+    if (this.movesLeft > 1) {
       return true
     } else {
       return false
@@ -72,15 +72,6 @@ class Player {
     }
   }
 
-
-
-
-
-
-
-
-
-
   // when the player wants to go right, this method is called
   right (width) {
     if (this.col < width) {
@@ -89,7 +80,10 @@ class Player {
       //checking for blocked or breakable cells
       // if there are, the movement will not execute
       if (this.checkForBlock(futureLocation)){return}
-      if (this.checkForBreak(futureLocation)){return}
+      if (this.checkForBreak(futureLocation)){
+        this.movesLeft --
+        return
+      }
 
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
@@ -109,16 +103,6 @@ class Player {
   }
 
 
-
-
-
-
-
-
-
-
-
-
   left () {
     if (this.col > 1) {
       let futureLocation = [this.row, this.col - 1]
@@ -126,7 +110,10 @@ class Player {
       //checking for blocked or breakable cells
       // if there are, the movement will not execute
       if (this.checkForBlock(futureLocation)){return}
-      if (this.checkForBreak(futureLocation)){return}
+      if (this.checkForBreak(futureLocation)){
+        this.movesLeft --
+        return
+      }
 
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
@@ -146,7 +133,10 @@ class Player {
       //checking for blocked or breakable cells
       // if there are, the movement will not execute
       if (this.checkForBlock(futureLocation)){return}
-      if (this.checkForBreak(futureLocation)){return}
+      if (this.checkForBreak(futureLocation)){
+        this.movesLeft --
+        return
+      }
 
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
@@ -166,7 +156,10 @@ class Player {
       //checking for blocked or breakable cells
       // if there are, the movement will not execute
       if (this.checkForBlock(futureLocation)){return}
-      if (this.checkForBreak(futureLocation)){return}
+      if (this.checkForBreak(futureLocation)){
+        this.movesLeft --
+        return
+      }
 
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){

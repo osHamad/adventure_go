@@ -14,6 +14,35 @@ td img {
 }
 
 #grid {
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
   border-spacing: 0;
-  
+  border: 10px solid black;
+}
+
+#moves-display {
+  float: left;
+  margin-top: 25%;
+  border: 3px solid black;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+
+#level-display {
+  float: right;
+  margin-top: 25%;
+  border: 3px solid black;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+
+#moves-display-p,
+#level-display-p {
+  font-size: 80px;
+  text-align: center;
 }

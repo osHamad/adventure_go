@@ -8,7 +8,7 @@ let currentCell = new Player(1, 7, board, 16)
 
 document.addEventListener('keydown', function(event){
   // if there are no more moves left the game ends
-  if (currentCell.isMovesLeft()){
+  if (!currentCell.isMovesLeft()){
     document.getElementById('grid').style.display = 'none'
   }
 
@@ -29,6 +29,10 @@ document.addEventListener('keydown', function(event){
   if (currentCell.isPlayerExit == true){
     document.getElementById('grid').style.display = 'none'
   }
+
+  // updating the amount of moves left
+  const moveDisplayer = document.getElementById('moves-display-p')
+  moveDisplayer.innerText = currentCell.movesNumber()
 })
 
 // creating cell divs in html
@@ -66,7 +70,7 @@ for (i = 1; i <= board.getHeight(); i++) {
   }
 }
 
-// making player into a red cell
+// making player into a character image
 document.getElementById(currentCell.cellName()).src = 'images/character.png'
 
 // creating obstacle object

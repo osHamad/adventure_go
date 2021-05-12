@@ -1,7 +1,20 @@
-#image-2,
-#image-3,
-#image-4,
-#image-5 { display: none; }
+@font-face {
+    font-family: 'Tiki Tropic';
+    src: url('TikiTropic.eot');
+    src: url('TikiTropic.eot?#iefix') format('embedded-opentype'),
+        url('TikiTropic.woff2') format('woff2'),
+        url('TikiTropic.woff') format('woff'),
+        url('TikiTropic.ttf') format('truetype'),
+        url('TikiTropic.svg#TikiTropic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+  margin: 0;
+  height: 100%
+}
 
 #image-1 {
   display: block;
@@ -12,10 +25,19 @@
   width:50%;
 }
 
-#start-menu { display: none; }
+#start-menu {
+  display: none;
+  background-image: url(visual-novel/zero.jpg);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
 
 #game-title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Tiki Tropic';
   font-size: 100px;
   margin: 5px;
   padding: 0;
@@ -25,7 +47,8 @@
 #play-button,
 #settings-button,
 #code-button {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Tiki Tropic';
+  -webkit-text-stroke: 3px white;
   font-size: 65px;
   padding: 40px;
   margin-left: auto;
@@ -34,9 +57,20 @@
   margin-bottom: 20px;
   width: 30%;
   display: block;
+  color: inherit;
 }
 
+#play-button {
+  color: rgb(233, 8, 120)
+}
 
+#settings-button {
+  color: rgb(245, 129, 31)
+}
+
+#code-button {
+  color: rgb(93, 29, 20)
+}
 
 
 
@@ -72,4 +106,19 @@
   border: none;
   background-color: transparent;
   margin: 5px;
+}
+
+.pink {
+  color: rgb(233, 8, 120);
+  -webkit-text-stroke: 3px white;
+}
+
+.orange {
+  color: rgb(245, 129, 31);
+  -webkit-text-stroke: 3px white;
+}
+
+.brown {
+  color: rgb(93, 29, 20);
+  -webkit-text-stroke: 3px white;
 }
