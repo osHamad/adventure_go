@@ -5,7 +5,8 @@ class Player {
     // row and column to help identify the player's current location
     this.row = row;
     this.col = col;
-    this.image = './images/main-character.png'
+    this.characterImage = './images/character.png'
+    this.floorImage = './images/granite-floor.png'
 
     // for key levels this must be set to true to proceed
     this.keyGained = false;
@@ -53,6 +54,7 @@ class Player {
     let isBreakType = board.getCell(futureLocation)
     if (isBreakType.getType() === 'break') {
       isBreakType.assignType('walk')
+      isBreakType.createCell('walk')
       return true
     } else {
       return false
@@ -68,6 +70,15 @@ class Player {
       return false
     }
   }
+
+
+
+
+
+
+
+
+
 
   // when the player wants to go right, this method is called
   right (width) {
@@ -85,10 +96,27 @@ class Player {
         }
 
       // if no other condition blocks the movement, character will move
+
+      document.getElementById(this.cellName()).src = this.floorImage
+
       this.col ++
+
+      document.getElementById(this.cellName()).src = this.characterImage
+
       this.movesLeft --
     }
   }
+
+
+
+
+
+
+
+
+
+
+
 
   left () {
     if (this.col > 1) {
@@ -103,7 +131,9 @@ class Player {
       if (this.checkForExit(futureLocation)){
       this.isPlayerExit = true
       }
+      document.getElementById(this.cellName()).src = this.floorImage
       this.col --
+      document.getElementById(this.cellName()).src = this.characterImage
       this.movesLeft --
     }
   }
@@ -121,7 +151,9 @@ class Player {
       if (this.checkForExit(futureLocation)){
       this.isPlayerExit = true
       }
+      document.getElementById(this.cellName()).src = this.floorImage
       this.row ++
+      document.getElementById(this.cellName()).src = this.characterImage
       this.movesLeft --
     }
   }
@@ -139,7 +171,9 @@ class Player {
       if (this.checkForExit(futureLocation)){
         this.isPlayerExit = true
       }
+      document.getElementById(this.cellName()).src = this.floorImage
       this.row --
+      document.getElementById(this.cellName()).src = this.characterImage
       this.movesLeft --
     }
   }

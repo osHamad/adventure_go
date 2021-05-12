@@ -1,5 +1,5 @@
 // creating a new player object
-let currentCell = new Player(1, 1, movesLeft=50)
+let currentCell = new Player(1, 7, movesLeft=50)
 
 
 document.addEventListener('keydown', function(event){
@@ -11,13 +11,13 @@ document.addEventListener('keydown', function(event){
   // defining user keyboard controls
   // each arrow key goes in dedicated direction
   if (event.keyCode === 39) {
-    goRight()
+    currentCell.right(board.getWidth())
   } else if (event.keyCode === 37) {
-    goLeft()
+    currentCell.left()
   } else if (event.keyCode === 38) {
-    goUp()
+    currentCell.up()
   } else if (event.keyCode === 40) {
-    goDown()
+    currentCell.down(board.getHeight())
   }
 
   // checks if the player reached the exit after each button click
@@ -54,7 +54,7 @@ for (i = 1; i <= board.getHeight(); i++) {
 
     tableCell.appendChild(tableImage)
 
-    tableImage.src = 'images/floor-tile.png'
+    tableImage.src = 'images/granite-floor.png'
     
   }
 }
@@ -67,46 +67,30 @@ for (i = 1; i <= board.getHeight(); i++) {
 }
 
 // making player into a red cell
-document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
+document.getElementById(currentCell.cellName()).src = 'images/character.png'
 
 // creating obstacle object
-board.getCell([5, 5]).createCell('exit')
+board.getCell([1, 1]).createCell('void')
+board.getCell([1, 2]).createCell('void')
+board.getCell([1, 3]).createCell('void')
+board.getCell([1, 4]).createCell('void')
+board.getCell([2, 1]).createCell('void')
+board.getCell([3, 1]).createCell('void')
+board.getCell([4, 1]).createCell('void')
+board.getCell([5, 8]).createCell('void')
+board.getCell([4, 8]).createCell('void')
+board.getCell([3, 8]).createCell('void')
+board.getCell([2, 8]).createCell('void')
+
+board.getCell([1, 8]).createCell('block')
+board.getCell([4, 3]).createCell('block')
+board.getCell([4, 4]).createCell('block')
+board.getCell([4, 5]).createCell('block')
 
 board.getCell([2, 2]).createCell('break')
+board.getCell([2, 3]).createCell('break')
+board.getCell([2, 4]).createCell('break')
+board.getCell([3, 3]).createCell('break')
+board.getCell([3, 5]).createCell('break')
 
-board.getCell([4, 1]).createCell('break')
-
-board.getCell([5, 1]).createCell('block')
-
-board.getCell([6, 6]).createCell('block')
-
-board.getCell([2, 6]).createCell('block')
-
-
-// function to go right
-function goRight(){
-  document.getElementById(currentCell.cellName()).src = 'images/floor-tile.png'
-  currentCell.right(board.getWidth())
-  document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
-}
-
-// function to go left
-function goLeft(){
-  document.getElementById(currentCell.cellName()).src = 'images/floor-tile.png'
-  currentCell.left()
-  document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
-}
-
-// function to go down
-function goDown(){
-  document.getElementById(currentCell.cellName()).src = 'images/floor-tile.png'
-  currentCell.down(board.getHeight())
-  document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
-}
-
-// function to go up
-function goUp(){
-  document.getElementById(currentCell.cellName()).src = 'images/floor-tile.png'
-  currentCell.up()
-  document.getElementById(currentCell.cellName()).src = 'images/main-character.png'
-}
+board.getCell([6, 8]).createCell('exit')

@@ -11,10 +11,11 @@ class Cell {
     this.cellType = cellType
 
     this.cellTypeImage = {
-      'walk': 'images/floor-tile.png',
+      'walk': 'images/granite-floor.png',
       'block': 'images/rock.png',
       'break': 'images/barrel.png',
-      'exit': 'images/main-character.png',
+      'exit': 'images/treasure.png',
+      'void': 'images/void.png',
     }
   }
 
