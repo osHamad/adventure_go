@@ -169,7 +169,7 @@ body {
 #mute-button-2 {
   border: 0;
   background-color: transparent;
-  float: right;
+  float: left;
 }
 
 #level-1,
