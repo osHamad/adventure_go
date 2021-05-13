@@ -14,7 +14,7 @@ td img {
 }
 
 #grid {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
   border-spacing: 0;
@@ -45,4 +45,18 @@ td img {
 #level-display-p {
   font-size: 80px;
   text-align: center;
+}
+
+@keyframes gameFadeIn {
+  0% {background-color: black; opacity: 0}
+  80% {background-color: black; opacity: 0}
+  100% {background-color: transparent; opacity: 1}
+}
+
+body {
+  animation: gameFadeIn 5s;
+}
+
+.to-main-menu {
+  text-align: center
 }
