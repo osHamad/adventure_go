@@ -5,35 +5,12 @@ let board = new Board(8, 6)
 // creating a new player object
 let currentCell = new Player(1, 7, board, 16)
 
-
-document.addEventListener('keydown', function(event){
-  // if there are no more moves left the game ends
-  if (!currentCell.isMovesLeft()){
-    document.getElementById('grid').style.display = 'none'
+// generating board cell objects
+for (i = 1; i <= board.getHeight(); i++) {
+  for (j = 1; j <= board.getWidth(); j++) {
+    board.addCell(new Cell(i, j))
   }
-
-  // defining user keyboard controls
-  // each arrow key goes in dedicated direction
-  if (event.keyCode === 39) {
-    currentCell.right(board.getWidth())
-  } else if (event.keyCode === 37) {
-    currentCell.left()
-  } else if (event.keyCode === 38) {
-    currentCell.up()
-  } else if (event.keyCode === 40) {
-    currentCell.down(board.getHeight())
-  }
-
-  // checks if the player reached the exit after each button click
-  // if so, the grid is hidden
-  if (currentCell.isPlayerExit == true){
-    document.getElementById('grid').style.display = 'none'
-  }
-
-  // updating the amount of moves left
-  const moveDisplayer = document.getElementById('moves-display-p')
-  moveDisplayer.innerText = currentCell.movesNumber()
-})
+}
 
 // creating cell divs in html
 for (i = 1; i <= board.getHeight(); i++) {
@@ -60,13 +37,6 @@ for (i = 1; i <= board.getHeight(); i++) {
 
     tableImage.src = 'images/granite-floor.png'
     
-  }
-}
-
-// generating board cell objects
-for (i = 1; i <= board.getHeight(); i++) {
-  for (j = 1; j <= board.getWidth(); j++) {
-    board.addCell(new Cell(i, j))
   }
 }
 
