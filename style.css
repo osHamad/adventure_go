@@ -38,10 +38,10 @@ body {
 
 #game-title {
   font-family: 'Tiki Tropic';
+  text-align: center;
   font-size: 100px;
   margin: 5px;
   padding: 0;
-  text-align: center;
 }
 
 #play-button,
@@ -58,22 +58,29 @@ body {
   width: 30%;
   display: block;
   color: inherit;
+  border-radius: 5px;
+  border: inherit;
+  background-color: rgba(255, 255, 255, 0.4)
 }
 
 #play-button {
-  color: rgb(233, 8, 120)
+  color: rgb(233, 8, 120);
+  border: 3px solid rgb(233, 8, 120);
 }
 
 #settings-button {
-  color: rgb(245, 129, 31)
+  color: rgb(245, 129, 31);
+  border: 3px solid rgb(245, 129, 31);
 }
 
 #code-button {
-  color: rgb(93, 29, 20)
+  color: rgb(93, 29, 20);
+  border: 3px solid rgb(93, 29, 20);
 }
 
-
-
+#play-button:hover,
+#settings-button:hover,
+#code-button:hover { background-color: rgba(255, 255, 255, 0.6) }
 
 #visual-novel {
   animation: fadeInAnimation ease 3s;
@@ -100,6 +107,12 @@ body {
   margin-top: 10px;
 }
 
+#text-box-text {
+  line-height: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
 #text-box-next {
   float: right;
   font-size: 20px;
@@ -119,6 +132,74 @@ body {
 }
 
 .brown {
+  color: rgb(93, 29, 20);
+  -webkit-text-stroke: 3px white;
+}
+
+#mute-button-1,
+#mute-button-2 {
+  border: 0;
+  background-color: transparent;
+  float: left;
+}
+
+#level-1,
+#level-2,
+#level-3,
+#level-4 {
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+  border: 8px solid rgb(93, 29, 20);
+  border-radius: 10px;
+  font-size: 45px;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: 'Tiki Tropic';
+  color: initial;
+  -webkit-text-stroke: initial;
+}
+
+#level-1:hover,
+#level-2:hover,
+#level-3:hover,
+#level-4:hover { background-color: rgba(255, 255, 255, 0.6) }
+
+#level-1,
+#level-3 {
+  color: rgb(245, 129, 31);
+  -webkit-text-stroke: 2px white;
+}
+
+#level-2,
+#level-4 {
+  color: rgb(233, 8, 120);
+  -webkit-text-stroke: 2px white;
+}
+
+#level-buttons {
+  display: none;
+  background-image: url(visual-novel/zero.jpg);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+#level-button-section {
+  display: block;
+  margin-right: 110px;
+  margin-left: 110px;
+  margin-top: 100px
+}
+
+#select-level-title {
+  font-family: 'Tiki Tropic';
+  text-align: center;
+  font-size: 100px;
+  margin: 5px;
+  padding: 0;
   color: rgb(93, 29, 20);
   -webkit-text-stroke: 3px white;
 }
