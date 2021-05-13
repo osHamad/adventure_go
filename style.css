@@ -83,7 +83,8 @@ body {
 #code-button:hover { background-color: rgba(255, 255, 255, 0.6) }
 
 #visual-novel {
-  animation: fadeInAnimation ease 3s;
+  background-image: url('/visual-novel/visual-novel-pattern.png');
+  animation: fadeInAnimation ease 6s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
