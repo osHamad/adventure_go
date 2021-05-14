@@ -16,6 +16,7 @@ class Cell {
       'break': 'images/barrel.png',
       'exit': 'images/treasure.png',
       'void': 'images/void.png',
+      'move': 'images/move.png'
     }
   }
 

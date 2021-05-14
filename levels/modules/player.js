@@ -72,8 +72,18 @@ class Player {
     }
   }
 
+  // method to check if the path has a movable object
+  checkForMove (futureLocation) {
+    let isMoveType = this.board.getCell(futureLocation)
+    if (isMoveType.getType() === 'move') {
+      return true
+    } else {
+      return false
+    }
+  }
+
   // when the player wants to go right, this method is called
-  right (width) {
+  right (width, height) {
     if (this.col < width) {
       let futureLocation = [this.row, this.col + 1]
 
@@ -83,6 +93,26 @@ class Player {
       if (this.checkForBreak(futureLocation)){
         this.movesLeft --
         return
+      }
+
+      if (this.checkForMove(futureLocation)){
+        let isMoveType = this.board.getCell(futureLocation)
+        let moveTypeFuture = this.board.getCell([futureLocation[0], futureLocation[1]+1])
+        if (moveTypeFuture.getType() === 'walk') {
+          isMoveType.assignType('walk')
+          isMoveType.createCell('walk')
+
+
+          let moveMoveCell = this.board.getCell([this.row, this.col + 2])
+          moveMoveCell.assignType('move')
+          moveMoveCell.createCell('move')
+
+          this.movesLeft --
+          
+          return
+        } else {
+          return
+        }
       }
 
       // checking is the exit is reached and setting true accordingly
@@ -115,6 +145,26 @@ class Player {
         return
       }
 
+      if (this.checkForMove(futureLocation)){
+        let isMoveType = this.board.getCell(futureLocation)
+        let moveTypeFuture = this.board.getCell([futureLocation[0], futureLocation[1]-1])
+        if (moveTypeFuture.getType() === 'walk') {
+          isMoveType.assignType('walk')
+          isMoveType.createCell('walk')
+
+
+          let moveMoveCell = this.board.getCell([this.row, this.col - 2])
+          moveMoveCell.assignType('move')
+          moveMoveCell.createCell('move')
+
+          this.movesLeft --
+          
+          return
+        } else {
+          return
+        }
+      }
+
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
       this.isPlayerExit = true
@@ -138,6 +188,26 @@ class Player {
         return
       }
 
+      if (this.checkForMove(futureLocation)){
+        let isMoveType = this.board.getCell(futureLocation)
+        let moveTypeFuture = this.board.getCell([futureLocation[0] + 1, futureLocation[1]])
+        if (moveTypeFuture.getType() === 'walk') {
+          isMoveType.assignType('walk')
+          isMoveType.createCell('walk')
+
+
+          let moveMoveCell = this.board.getCell([this.row + 2, this.col])
+          moveMoveCell.assignType('move')
+          moveMoveCell.createCell('move')
+
+          this.movesLeft --
+          
+          return
+        } else {
+          return
+        }
+      }
+
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
       this.isPlayerExit = true
@@ -159,6 +229,26 @@ class Player {
       if (this.checkForBreak(futureLocation)){
         this.movesLeft --
         return
+      }
+
+      if (this.checkForMove(futureLocation)){
+        let isMoveType = this.board.getCell(futureLocation)
+        let moveTypeFuture = this.board.getCell([futureLocation[0]-1, futureLocation[1]])
+        if (moveTypeFuture.getType() === 'walk') {
+          isMoveType.assignType('walk')
+          isMoveType.createCell('walk')
+
+
+          let moveMoveCell = this.board.getCell([this.row - 2, this.col])
+          moveMoveCell.assignType('move')
+          moveMoveCell.createCell('move')
+
+          this.movesLeft --
+          
+          return
+        } else {
+          return
+        }
       }
 
       // checking is the exit is reached and setting true accordingly

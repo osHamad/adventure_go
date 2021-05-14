@@ -64,7 +64,8 @@ board.getCell([4, 3]).createCell('block')
 board.getCell([4, 4]).createCell('block')
 board.getCell([4, 5]).createCell('block')
 board.getCell([3, 6]).createCell('block')
-board.getCell([6, 4]).createCell('block')
+
+board.getCell([6, 4]).createCell('move')
 
 board.getCell([2, 2]).createCell('break')
 board.getCell([2, 3]).createCell('break')

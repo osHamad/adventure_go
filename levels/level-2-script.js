@@ -3,7 +3,7 @@
 let board = new Board(8, 6)
 
 // creating a new player object
-let currentCell = new Player(1, 7, board, 16)
+let currentCell = new Player(1, 6, board, 100)
 
 // creating cell divs in html
 for (i = 1; i <= board.getHeight(); i++) {
@@ -55,6 +55,11 @@ board.getCell([5, 8]).createCell('void')
 board.getCell([4, 8]).createCell('void')
 board.getCell([3, 8]).createCell('void')
 board.getCell([2, 8]).createCell('void')
+
+board.getCell([1, 7]).createCell('move')
+board.getCell([4, 3]).createCell('move')
+board.getCell([4, 5]).createCell('block')
+board.getCell([6, 4]).createCell('move')
 
 
 board.getCell([6, 8]).createCell('exit')

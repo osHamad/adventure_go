@@ -11,7 +11,7 @@ document.addEventListener('keyup', function(event){
   // defining user keyboard controls
   // each arrow key goes in dedicated direction
   if (event.keyCode === 39) {
-    currentCell.right(board.getWidth())
+    currentCell.right(board.getWidth(), board.getHeight())
   } else if (event.keyCode === 37) {
     currentCell.left()
   } else if (event.keyCode === 38) {
