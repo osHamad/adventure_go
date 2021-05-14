@@ -21,9 +21,13 @@ class Player {
     this.isPlayerExit = false;
   }
 
+  exitGame () {
+    return this.isPlayerExit
+  }
+
   // this checks if there are any moves left
-  isMovesLeft () {
-    if (this.movesLeft > 1) {
+  noMovesLeft () {
+    if (this.movesLeft < 1) {
       return true
     } else {
       return false

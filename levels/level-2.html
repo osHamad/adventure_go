@@ -3,16 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Level 2</title>
   <link href="game-style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <div id="game-screen">
-  <div id="moves-display"><p id="moves-display-p">16</p></div>
-  <div id="level-display"><p id="level-display-p">I</p></div>
+  <div id="moves-display"><p id="moves-display-p">23</p></div>
+  <div id="level-display"><p id="level-display-p">II</p></div>
   <table id="grid"></table>
-  <div class="to-main-menu"><p>Main Menu [ESC]</p></div>
+  <div class="to-main-menu"><pre><p>&#2022; MAIN MENU [ESC]     RESTART [R]&#2022;</p></pre></div>
   </div>
+
+  <div id="winning-screen">
+  <p>Level Complete</p>
+  <button id="next-level-button2">Next Level</button>
+  <button id="main-menu-2">Main Menu</button>
+  </div>
+
+  <div id="losing-screen">
+  <p>Out Of Moves</p>
+  <button id="restart-button2">Restart</button>
+  <button id="main-menu-button2">Main Menu</button>
+  </div>
+
   <script src="modules/cell.js" type="text/javascript"></script>
   <script src="modules/player.js" type="text/javascript"></script>
   <script src="modules/board.js" type="text/javascript"></script>

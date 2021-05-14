@@ -1,9 +1,16 @@
 // board that will be accessed later to make the level
 // board is an array of generated cell objects
-let board = new Board(8, 6)
+let board = new Board(7, 6)
 
 // creating a new player object
-let currentCell = new Player(1, 7, board, 16)
+let currentCell = new Player(1, 6, board, 23)
+
+// generating board cell objects
+for (i = 1; i <= board.getHeight(); i++) {
+  for (j = 1; j <= board.getWidth(); j++) {
+    board.addCell(new Cell(i, j))
+  }
+}
 
 // creating cell divs in html
 for (i = 1; i <= board.getHeight(); i++) {
@@ -33,13 +40,6 @@ for (i = 1; i <= board.getHeight(); i++) {
   }
 }
 
-// generating board cell objects
-for (i = 1; i <= board.getHeight(); i++) {
-  for (j = 1; j <= board.getWidth(); j++) {
-    board.addCell(new Cell(i, j))
-  }
-}
-
 // making player into a character image
 document.getElementById(currentCell.cellName()).src = 'images/character.png'
 
@@ -47,13 +47,37 @@ document.getElementById(currentCell.cellName()).src = 'images/character.png'
 board.getCell([1, 1]).createCell('void')
 board.getCell([1, 2]).createCell('void')
 board.getCell([1, 3]).createCell('void')
-board.getCell([1, 4]).createCell('void')
+board.getCell([2, 1]).createCell('void')
+board.getCell([4, 6]).createCell('void')
+board.getCell([3, 1]).createCell('void')
+board.getCell([3, 6]).createCell('void')
+board.getCell([1, 7]).createCell('void')
+board.getCell([2, 7]).createCell('void')
+board.getCell([3, 7]).createCell('void')
+board.getCell([4, 7]).createCell('void')
+
+board.getCell([1, 4]).createCell('block')
+board.getCell([4, 5]).createCell('block')
+board.getCell([4, 4]).createCell('block')
+board.getCell([4, 3]).createCell('block')
+board.getCell([5, 7]).createCell('block')
+
+board.getCell([5, 2]).createCell('move')
+board.getCell([6, 2]).createCell('move')
+board.getCell([5, 5]).createCell('move')
+board.getCell([6, 4]).createCell('move')
 
 board.getCell([2, 2]).createCell('break')
-board.getCell([2, 3]).createCell('break')
 board.getCell([2, 4]).createCell('break')
-board.getCell([3, 3]).createCell('break')
 board.getCell([3, 5]).createCell('break')
-board.getCell([6, 1]).createCell('break')
+board.getCell([3, 3]).createCell('break')
 
-board.getCell([6, 8]).createCell('exit')
+board.getCell([6, 7]).createCell('exit')
+
+document.getElementById('restart-button3').addEventListener('click', restartLevel)
+
+document.getElementById('main-menu-button3').addEventListener('click', goToMenu)
+
+document.getElementById('main-menu-3').addEventListener('click', goToMenu)
+
+document.getElementById('next-level-button3').addEventListener('click', nextLevel)

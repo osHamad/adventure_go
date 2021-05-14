@@ -56,7 +56,7 @@ td img {
 }
 
 body {
-  background-color: black;
+  background-color: rgb(1, 2, 27);
 }
 
 @keyframes gameFadeIn {
@@ -76,7 +76,7 @@ body {
   left: 0;
   top: 0;
   z-index: 10;
-  animation: gameFadeIn 5s;
+  animation: gameFadeIn 3s;
 }
 
 .to-main-menu {
@@ -88,3 +88,45 @@ body {
   font-weight: bold;
   color: white;
 }
+
+.to-main-menu p {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#winning-screen,
+#losing-screen {
+  text-align: center;
+  display: none;
+  color: white;
+  font-size: 100px;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#winning-screen button,
+#losing-screen button {
+  width: 350px;
+  height: 150px;
+  background-color: transparent;
+  color: white;
+  font-size: 35px;
+  border: 4px solid white;
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+@keyframes lose-win-button{
+  0% {background-color: white}
+  100% {background-color: transparent}
+}
+
+@keyframes win-lose-animation{
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+#winning-screen button:hover,
+#losing-screen button:hover {animation: lose-win-button 1s}
+
+#winning-screen,
+#losing-screen {animation: win-lose-animation 2s}
