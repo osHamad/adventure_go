@@ -9,6 +9,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+
     <div id="visual-novel">
       <img id="image-1" src="visual-novel/first.png" alt="first_image">
       <p id="text-box-speaker">Aqua</p>
@@ -16,43 +17,9 @@
       <button id="text-box-next">next</button>
       <p id="text-box-text">...</p></div>
     </div>
+
+    <audio id="click-sound" src="/sfx/click-button.mp3"></audio>
     
-
-    <div id="start-menu">
-      <button id="mute-button-1"><img id="mute-button-image-1" src="images/unmute-button.png" alt="volume_control_button"></button>
-      <p id="game-title">
-        <span class="pink">A</span>
-        <span class="orange">d</span>
-        <span class="pink">v</span>
-        <span class="orange">e</span>
-        <span class="pink">n</span>
-        <span class="orange">t</span>
-        <span class="pink">u</span>
-        <span class="orange">r</span>
-        <span class="pink">e</span>
-        <span class="brown"> Go!</span>
-      </p>
-      <div id="button-block">
-      <button id="play-button">Play</button>
-      <button id="settings-button">Settings</button>
-      <button id="code-button">Code</button>
-      </div>
-      <audio id="music" src="/music/menu-theme.mp3"></audio>
-      <audio id="click-sound" src="/sfx/click-button.mp3"></audio>
-      <audio id="hover-sound" src="/sfx/hover-button.mp3"></audio>
-
-    </div>
-  <div id="level-buttons">
-  <button id="mute-button-2"><img id="mute-button-image-2" src="images/unmute-button.png" alt="volume_control_button"></button>
-  <button id="back-to-menu">Back</button>
-  <p id="select-level-title">Select Level</p>
-  <div id="level-button-section">
-  <button id="level-1">Level 1</button>
-  <button id="level-2">Level 2</button>
-  <button id="level-3">Level 3</button>
-  <button id="level-4">Level 4</button>
-  </div>
-  </div>
-  <script src="script.js"></script>
+  <script src="visual-novel-script.js"></script>
   </body>
 </html>

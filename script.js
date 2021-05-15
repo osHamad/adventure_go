@@ -8,7 +8,7 @@ function muteButton1() {
   const buttonImage = document.getElementById('mute-button-image-1')
   // checks if music is paused and plays the music
   if (music.paused) {
-    music.play()
+    playMenuMusic()
     buttonImage.src = 'images/unmute-button.png'
   } else {
     // otherwise, the music is paused
@@ -22,7 +22,7 @@ function muteButton2() {
   const buttonImage = document.getElementById('mute-button-image-2')
   // checks if music is paused and plays the music
   if (music.paused) {
-    music.play()
+    playMenuMusic()
     buttonImage.src = 'images/unmute-button.png'
   } else {
     // otherwise, the music is paused
@@ -44,6 +44,8 @@ document.getElementById('play-button').addEventListener('click', function(){
   const buttonImage = document.getElementById('mute-button-image-2')
   if (music.paused) {
     buttonImage.src = 'images/mute-button.png'
+  } else if (music.play) {
+    buttonImage.src = 'images/unmute-button.png'
   }
   const mainMenu = document.getElementById('start-menu')
   const levelSelector = document.getElementById('level-buttons')
@@ -80,7 +82,6 @@ document.getElementById('level-1').addEventListener('mouseover', hoverSound)
 document.getElementById('level-2').addEventListener('mouseover', hoverSound)
 document.getElementById('level-3').addEventListener('mouseover', hoverSound)
 document.getElementById('level-4').addEventListener('mouseover', hoverSound)
-document.getElementById('text-box-next').addEventListener('click', clickSound)
 
 function hoverSound () {
   const sound = document.getElementById('hover-sound')
@@ -94,81 +95,14 @@ function clickSound () {
 
 // this is the button to go back to the menu
 document.getElementById('back-to-menu').addEventListener('click', function(){
-  const buttonImage = document.getElementById('mute-button-image-2')
+  const buttonImage = document.getElementById('mute-button-image-1')
   if (music.paused) {
     buttonImage.src = 'images/mute-button.png'
+  } else if (music.play) {
+    buttonImage.src = 'images/unmute-button.png'
   }
   const mainMenu = document.getElementById('start-menu')
   const levelSelector = document.getElementById('level-buttons')
   levelSelector.style.display = 'none'
   mainMenu.style.display = 'block'
 })
-
-// this is the variable to know what to display on screen
-let visualCounter = 0
-
-// the script of what is said in the visual novel
-visualScript = [
-  'Kazuma, Kazuma!! All of our money somehow disappeared!!',
-  'Hmm, money? Oh that..',
-  'I spent it all yesterday at the tavern.',
-  'Megumin also came with me.',
-  'Kazuma..',
-  'Oi, oi, I just said Megumin also came with me!!!',
-  'Ok fine, I\'ll go earn back what I spent.. Sigh'
-
-]
-
-// order for current text box speakers
-const visualSpeaker = {
-  0: 'Aqua',
-  1: 'Kazuma',
-  2: 'Kazuma',
-  3: 'Kazuma',
-  4: 'Aqua',
-  5: 'Kazuma',
-  6: 'Kazuma'
-}
-
-// the text outline colors and border colors for the speaker
-const visualSpeakerColor = {
-  0: 'rgb(15, 167, 223)',
-  1: 'rgb(148, 211, 35)',
-  2: 'rgb(148, 211, 35)',
-  3: 'rgb(148, 211, 35)',
-  4: 'rgb(15, 167, 223)',
-  5: 'rgb(148, 211, 35)',
-  6: 'rgb(148, 211, 35)'
-}
-
-// order of images for the visual novel
-const visualImages = {
-  0: 'visual-novel/first.png',
-  1: 'visual-novel/second.png',
-  2: 'visual-novel/second.png',
-  3: 'visual-novel/third.png',
-  4: 'visual-novel/fourth.png',
-  5: 'visual-novel/fourth.png',
-  6: 'visual-novel/fifth.png'
-}
-
-document.getElementById('text-box-next').addEventListener('click', nextFrame)
-function nextFrame () {
-  if (visualCounter < visualScript.length) {
-    let text = document.getElementById('text-box-text')
-    let speaker = document.getElementById('text-box-speaker')
-    text.innerText = visualScript[visualCounter]
-    speaker.innerText = visualSpeaker[visualCounter]
-    speaker.style.borderColor = visualSpeakerColor[visualCounter]
-    speaker.style.webkitTextStrokeColor = visualSpeakerColor[visualCounter]
-    document.getElementById('image-1').src = visualImages[visualCounter]
-    visualCounter ++
-    
-  } else {
-    document.getElementById('visual-novel').style.display = 'none'
-    document.getElementById('start-menu').style.display = 'block'
-    playMenuMusic()
-  }
-  return 0
-}
-

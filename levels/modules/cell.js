@@ -16,7 +16,10 @@ class Cell {
       'break': 'images/barrel.png',
       'exit': 'images/treasure.png',
       'void': 'images/void.png',
-      'move': 'images/move.png'
+      'move': 'images/move.png',
+      'key': 'images/key.png',
+      'gate': 'images/gate.png',
+      'spike': 'images/spike.png'
     }
   }
 

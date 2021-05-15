@@ -43,7 +43,7 @@ function restartLevel () {
 
 function goToMenu () {
   
-  window.location.href = 'https://finalproject.osamahamad0.repl.co'
+  window.location.href = 'https://finalproject.osamahamad0.repl.co/main-menu.html'
 }
 
 function nextLevel () {

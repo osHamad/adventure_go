@@ -3,7 +3,7 @@
 let board = new Board(7, 6)
 
 // creating a new player object
-let currentCell = new Player(1, 6, board, 23)
+let currentCell = new Player(5, 1, board, 21)
 
 // generating board cell objects
 for (i = 1; i <= board.getHeight(); i++) {
@@ -44,35 +44,37 @@ for (i = 1; i <= board.getHeight(); i++) {
 document.getElementById(currentCell.cellName()).src = 'images/character.png'
 
 // creating obstacle object
-board.getCell([1, 1]).createCell('void')
-board.getCell([1, 2]).createCell('void')
-board.getCell([1, 3]).createCell('void')
-board.getCell([2, 1]).createCell('void')
-board.getCell([4, 6]).createCell('void')
-board.getCell([3, 1]).createCell('void')
-board.getCell([3, 6]).createCell('void')
-board.getCell([1, 7]).createCell('void')
-board.getCell([2, 7]).createCell('void')
-board.getCell([3, 7]).createCell('void')
-board.getCell([4, 7]).createCell('void')
 
-board.getCell([1, 4]).createCell('block')
-board.getCell([4, 5]).createCell('block')
-board.getCell([4, 4]).createCell('block')
-board.getCell([4, 3]).createCell('block')
-board.getCell([5, 7]).createCell('block')
+board.getCell([2, 3]).createCell('void')
+board.getCell([3, 3]).createCell('void')
+board.getCell([3, 4]).createCell('void')
+board.getCell([4, 3]).createCell('void')
+board.getCell([4, 4]).createCell('void')
+board.getCell([5, 3]).createCell('void')
+board.getCell([6, 3]).createCell('void')
+board.getCell([6, 2]).createCell('void')
+board.getCell([6, 1]).createCell('void')
 
-board.getCell([5, 2]).createCell('move')
-board.getCell([6, 2]).createCell('move')
-board.getCell([5, 5]).createCell('move')
-board.getCell([6, 4]).createCell('move')
+board.getCell([1, 1]).createCell('block')
+board.getCell([2, 1]).createCell('block')
+board.getCell([5, 4]).createCell('block')
+board.getCell([6, 4]).createCell('block')
 
 board.getCell([2, 2]).createCell('break')
-board.getCell([2, 4]).createCell('break')
-board.getCell([3, 5]).createCell('break')
-board.getCell([3, 3]).createCell('break')
+board.getCell([6, 7]).createCell('break')
+board.getCell([6, 6]).createCell('break')
+board.getCell([5, 6]).createCell('break')
 
-board.getCell([6, 7]).createCell('exit')
+board.getCell([3, 5]).createCell('move')
+board.getCell([3, 6]).createCell('move')
+board.getCell([3, 7]).createCell('move')
+
+board.getCell([2, 4]).createCell('spike')
+board.getCell([2, 5]).createCell('spike')
+board.getCell([3, 2]).createCell('spike')
+board.getCell([4, 6]).createCell('spike')
+
+board.getCell([6, 5]).createCell('exit')
 
 document.getElementById('restart-button2').addEventListener('click', restartLevel)
 

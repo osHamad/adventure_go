@@ -35,7 +35,7 @@ body {
 }
 
 #start-menu {
-  display: none;
+  display: block;
   background-image: url(visual-novel/zero.jpg);
   position: fixed;
   width: 100%;

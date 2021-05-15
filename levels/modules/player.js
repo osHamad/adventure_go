@@ -86,6 +86,16 @@ class Player {
     }
   }
 
+  // method to chech if there is a spike ahead
+  checkForSpike (futureLocation) {
+    let isSpikeType = this.board.getCell(futureLocation).getType()
+    if (isSpikeType === 'spike') {
+      return true
+    } else {
+      return false
+    }
+  }
+
   // when the player wants to go right, this method is called
   right (width, height) {
     if (this.col < width) {
@@ -122,7 +132,11 @@ class Player {
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
         this.isPlayerExit = true
-        }
+      }
+
+      if (this.checkForSpike(futureLocation)) {
+        this.movesLeft --
+      }
 
       // if no other condition blocks the movement, character will move
 
@@ -169,6 +183,10 @@ class Player {
         }
       }
 
+      if (this.checkForSpike(futureLocation)) {
+        this.movesLeft --
+      }
+
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
       this.isPlayerExit = true
@@ -212,6 +230,10 @@ class Player {
         }
       }
 
+      if (this.checkForSpike(futureLocation)) {
+        this.movesLeft --
+      }
+
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
       this.isPlayerExit = true
@@ -253,6 +275,10 @@ class Player {
         } else {
           return
         }
+      }
+
+      if (this.checkForSpike(futureLocation)) {
+        this.movesLeft --
       }
 
       // checking is the exit is reached and setting true accordingly
