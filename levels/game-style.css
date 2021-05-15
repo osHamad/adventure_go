@@ -8,8 +8,8 @@
   border: 0;
 }
 
-td img { 
-  display:block; 
+td img {
+  display: block;
   height: 100%;
 }
 
@@ -60,12 +60,10 @@ body {
 }
 
 @keyframes gameFadeIn {
-  0% {opacity: 0}
-  80% {opacity: 0}
-  100% {opacity: 1;}
+  0% { opacity: 0; }
+  80% { opacity: 0; }
+  100% { opacity: 1; }
 }
-
-
 
 #game-screen {
   background: url('images/dungeon-bg.png') no-repeat center center fixed;
@@ -101,6 +99,7 @@ body {
   font-size: 100px;
   margin: auto;
   font-family: 'Times New Roman', Times, serif;
+  animation: win-lose-animation 2s;
 }
 
 #winning-screen button,
@@ -115,18 +114,15 @@ body {
   font-family: inherit;
 }
 
-@keyframes lose-win-button{
-  0% {background-color: white}
-  100% {background-color: transparent}
+@keyframes lose-win-button {
+  0% { background-color: white; }
+  100% { background-color: transparent; }
 }
 
-@keyframes win-lose-animation{
-  0% {opacity: 0}
-  100% {opacity: 1}
+@keyframes win-lose-animation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 #winning-screen button:hover,
-#losing-screen button:hover {animation: lose-win-button 1s}
-
-#winning-screen,
-#losing-screen {animation: win-lose-animation 2s}
+#losing-screen button:hover { animation: lose-win-button 1s; }

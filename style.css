@@ -1,28 +1,30 @@
 @font-face {
-    font-family: 'Tiki Tropic';
-    src: url('TikiTropic.eot');
-    src: url('TikiTropic.eot?#iefix') format('embedded-opentype'),
-        url('TikiTropic.woff2') format('woff2'),
-        url('TikiTropic.woff') format('woff'),
-        url('TikiTropic.ttf') format('truetype'),
-        url('TikiTropic.svg#TikiTropic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Tiki Tropic';
+  src: url('TikiTropic.eot');
+  src: 
+    url('TikiTropic.eot?#iefix') format('embedded-opentype'),
+    url('TikiTropic.woff2') format('woff2'),
+    url('TikiTropic.woff') format('woff'),
+    url('TikiTropic.ttf') format('truetype'),
+    url('TikiTropic.svg#TikiTropic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Fredoka One';
-    src: url('FredokaOne-Regular.woff2') format('woff2'),
-        url('FredokaOne-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Fredoka One';
+  src: 
+    url('FredokaOne-Regular.woff2') format('woff2'),
+    url('FredokaOne-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
   margin: 0;
-  height: 100%
+  height: 100%;
 }
 
 #image-1 {
@@ -31,7 +33,7 @@ body {
   margin-left: auto;
   margin-top: 40px;
   height: 50%;
-  width:50%;
+  width: 50%;
 }
 
 #start-menu {
@@ -47,7 +49,7 @@ body {
 }
 
 #game-title {
-  font-family: 'Tiki Tropic';
+  font-family: 'Tiki Tropic', Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 100px;
   margin: 5px;
@@ -57,7 +59,7 @@ body {
 #play-button,
 #settings-button,
 #code-button {
-  font-family: 'Tiki Tropic';
+  font-family: 'Tiki Tropic', Arial, Helvetica, sans-serif;
   -webkit-text-stroke: 3px white;
   font-size: 65px;
   padding: 40px;
@@ -70,7 +72,7 @@ body {
   color: inherit;
   border-radius: 5px;
   border: inherit;
-  background-color: rgba(255, 255, 255, 0.4)
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 #play-button {
@@ -90,7 +92,7 @@ body {
 
 #play-button:hover,
 #settings-button:hover,
-#code-button:hover { background-color: rgba(255, 255, 255, 0.6) }
+#code-button:hover { background-color: rgba(255, 255, 255, 0.6); }
 
 #visual-novel {
   background-image: url('/visual-novel/bg-image.png');
@@ -100,14 +102,14 @@ body {
 }
   
 @keyframes fadeInAnimation {
-  0% {opacity:0; }
-  70% {opacity:0; }
-  100% {opacity:1; }
+  0% { opacity: 0; }
+  70% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes fadeInAnimationMenu {
-  0% {opacity:0; }
-  100% {opacity:1; }
+  0% { opacity:0; }
+  100% { opacity:1; }
 }
 
 
@@ -128,7 +130,7 @@ body {
   line-height: 20px;
   text-align: center;
   font-size: 20px;
-  font-family: 'Fredoka One';
+  font-family: 'Fredoka One', Arial, Helvetica, sans-serif;
   -webkit-text-stroke: 2px black;
 }
 
@@ -139,7 +141,7 @@ body {
   background-color: transparent;
   margin: 5px;
   color: white;
-  font-family: 'Fredoka One';
+  font-family: 'Fredoka One', Arial, Helvetica, sans-serif;
   -webkit-text-stroke: 2px black;
 }
 
@@ -151,8 +153,8 @@ body {
 }
 
 @keyframes nextarrow {
-  0% { opacity: 0.1 }
-  100% { opacity: 0.9 }
+  0% { opacity: 0.1; }
+  100% { opacity: 0.9; }
 }
 
 .pink {
@@ -188,7 +190,7 @@ body {
   border-radius: 10px;
   font-size: 45px;
   background-color: rgba(255, 255, 255, 0.4);
-  font-family: 'Tiki Tropic';
+  font-family: 'Tiki Tropic', Arial, Helvetica, sans-serif;
   color: initial;
   -webkit-text-stroke: initial;
 }
@@ -196,7 +198,7 @@ body {
 #level-1:hover,
 #level-2:hover,
 #level-3:hover,
-#level-4:hover { background-color: rgba(255, 255, 255, 0.6) }
+#level-4:hover { background-color: rgba(255, 255, 255, 0.6); }
 
 #level-1,
 #level-3 {
@@ -230,7 +232,7 @@ body {
 }
 
 #select-level-title {
-  font-family: 'Tiki Tropic';
+  font-family: 'Tiki Tropic', Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 100px;
   margin: 5px;
@@ -243,7 +245,7 @@ body {
   color: white;
   text-align: center;
   font-size: 20px; 
-  font-family: 'Fredoka One';
+  font-family: 'Fredoka One', Arial, Helvetica, sans-serif;
   -webkit-text-stroke: 2px rgb(15, 167, 223);
   background-color: rgba(255, 255, 255, 0.6);
   border: 5px solid rgb(15, 167, 223);
@@ -294,7 +296,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   border: 10px solid white;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.4)
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 #settings p {
@@ -305,11 +307,11 @@ body {
   float: left;
   color: rgb(245, 129, 31);
   -webkit-text-stroke: 2px white;
-  font-family: 'Tiki Tropic'
+  font-family: 'Tiki Tropic', Arial, Helvetica, sans-serif;
 }
 
 #settings span p {
-  font-family: 'Fredoka One';
+  font-family: 'Fredoka One', Arial, Helvetica, sans-serif;
   margin-top: 100px;
   margin-left: 100px;
   margin-right: 100px;
