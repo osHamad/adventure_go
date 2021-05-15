@@ -2,6 +2,33 @@
 document.getElementById('mute-button-1').addEventListener('click', muteButton1)
 document.getElementById('mute-button-2').addEventListener('click', muteButton2)
 
+let volumeNumber = 0.1
+
+document.getElementById('settings-button').addEventListener('click', function(){
+  document.getElementById('start-menu').style.display = 'none'
+  document.getElementById('settings').style.display = 'block'
+})
+
+document.getElementById('volume-increase').addEventListener('click', function(){
+  const music = document.getElementById('music')
+  let vol = document.getElementById('volume-number')
+  if (volumeNumber < 0.9) {
+    volumeNumber += 0.1
+    music.volume = volumeNumber
+    vol.innerText = Math.round(volumeNumber * 10)
+  }
+})
+
+document.getElementById('volume-decrease').addEventListener('click', function(){
+  const music = document.getElementById('music')
+  let vol = document.getElementById('volume-number')
+  if (volumeNumber > 0.1) {
+    volumeNumber -= 0.1
+    music.volume = volumeNumber
+    vol.innerText = Math.round(volumeNumber * 10)
+  }
+})
+
 
 function muteButton1() {
   const music = document.getElementById('music')
@@ -35,7 +62,7 @@ function muteButton2() {
 function playMenuMusic () {
   let menuMusic = document.getElementById('music')
   menuMusic.loop = true
-  menuMusic.volume = 0.1
+  menuMusic.volume = volumeNumber
   menuMusic.play()
 }
 
@@ -94,7 +121,7 @@ function clickSound () {
 }
 
 // this is the button to go back to the menu
-document.getElementById('back-to-menu').addEventListener('click', function(){
+document.getElementById('back-to-menu-1').addEventListener('click', function(){
   const buttonImage = document.getElementById('mute-button-image-1')
   if (music.paused) {
     buttonImage.src = 'images/mute-button.png'
@@ -104,5 +131,19 @@ document.getElementById('back-to-menu').addEventListener('click', function(){
   const mainMenu = document.getElementById('start-menu')
   const levelSelector = document.getElementById('level-buttons')
   levelSelector.style.display = 'none'
+  mainMenu.style.display = 'block'
+})
+
+// this is the button to go back to the menu
+document.getElementById('back-to-menu-2').addEventListener('click', function(){
+  const buttonImage = document.getElementById('mute-button-image-1')
+  if (music.paused) {
+    buttonImage.src = 'images/mute-button.png'
+  } else if (music.play) {
+    buttonImage.src = 'images/unmute-button.png'
+  }
+  const mainMenu = document.getElementById('start-menu')
+  const settingSelector = document.getElementById('settings')
+  settingSelector.style.display = 'none'
   mainMenu.style.display = 'block'
 })

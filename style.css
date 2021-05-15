@@ -255,7 +255,8 @@ body {
   margin-left: 375px;
 }
 
-#back-to-menu {
+#back-to-menu-1,
+#back-to-menu-2 {
   width: 100px;
   height: 50px;
   border: 0;
@@ -266,4 +267,52 @@ body {
   margin-left: auto;
   margin-right: 30px;
   font-weight: bold;
+}
+
+#settings {
+  display: none;
+  background-image: url(visual-novel/zero.jpg);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  animation: fadeInAnimationMenu ease 1s;
+}
+
+#volume-decrease,
+#volume-increase {
+  margin-top: 100px;
+  float: left;
+  font-size: 100px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 50%;
+  color: rgb(233, 8, 120);
+  font-family: Arial, Helvetica, sans-serif;
+  border: 10px solid white;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.4)
+}
+
+#settings p {
+  margin-top: 100px;
+  margin-left: 400px;
+  margin-right: 50px;
+  font-size: 50px;
+  float: left;
+  color: rgb(245, 129, 31);
+  -webkit-text-stroke: 2px white;
+  font-family: 'Tiki Tropic'
+}
+
+#settings span p {
+  font-family: 'Fredoka One';
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-size: 50px;
+  float: left;
 }
