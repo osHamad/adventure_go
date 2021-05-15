@@ -1,7 +1,7 @@
 // this is the player class
 // your character's information and functions are stored and executed here
 class Player {
-  constructor (row, col, board, movesLeft) {
+  constructor (row, col, board, movesLeft, gateLocation=null) {
     // row and column to help identify the player's current location
     this.row = row;
     this.col = col;
@@ -19,6 +19,8 @@ class Player {
     // once the player reaches the exit, this will be set to true
     // the level will finish
     this.isPlayerExit = false;
+
+    this.gateLocation = gateLocation
   }
 
   exitGame () {
@@ -44,10 +46,20 @@ class Player {
     return `cell-${this.row}-${this.col}`
   }
 
+  checkForKey (futureLocation) {
+    let isKeyType = this.board.getCell(futureLocation).getType()
+    if (isKeyType === 'key') {
+      this.keyGained = true
+      return true
+    } else {
+      return false
+    }
+  }
+
   // method to check if path is blocked, either block or void
   checkForBlock (futureLocation) {
     let isBlockType = this.board.getCell(futureLocation).getType()
-    if (isBlockType === 'block' || isBlockType === 'void') {
+    if (isBlockType === 'block' || isBlockType === 'void' || isBlockType === 'gate') {
       return true
     } else {
       return false
@@ -138,6 +150,12 @@ class Player {
         this.movesLeft --
       }
 
+      if (this.checkForKey(futureLocation)) {
+        let isKeyType = this.board.getCell(this.gateLocation)
+        isKeyType.assignType('walk')
+        isKeyType.createCell('walk')
+      }
+
       // if no other condition blocks the movement, character will move
 
       document.getElementById(this.cellName()).src = this.floorImage
@@ -187,6 +205,12 @@ class Player {
         this.movesLeft --
       }
 
+      if (this.checkForKey(futureLocation)) {
+        let isKeyType = this.board.getCell(this.gateLocation)
+        isKeyType.assignType('walk')
+        isKeyType.createCell('walk')
+      }
+
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
       this.isPlayerExit = true
@@ -234,6 +258,12 @@ class Player {
         this.movesLeft --
       }
 
+      if (this.checkForKey(futureLocation)) {
+        let isKeyType = this.board.getCell(this.gateLocation)
+        isKeyType.assignType('walk')
+        isKeyType.createCell('walk')
+      }
+
       // checking is the exit is reached and setting true accordingly
       if (this.checkForExit(futureLocation)){
       this.isPlayerExit = true
@@ -279,6 +309,12 @@ class Player {
 
       if (this.checkForSpike(futureLocation)) {
         this.movesLeft --
+      }
+
+      if (this.checkForKey(futureLocation)) {
+        let isKeyType = this.board.getCell(this.gateLocation)
+        isKeyType.assignType('walk')
+        isKeyType.createCell('walk')
       }
 
       // checking is the exit is reached and setting true accordingly
