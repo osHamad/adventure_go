@@ -1,6 +1,8 @@
+let movesDisabled = false
+
 document.addEventListener('keyup', function(event){
   // defining user keyboard controls
-  // each arrow key goes in dedicated direction
+  if (movesDisabled) {return}
   if (event.keyCode === 39) {
     currentCell.right(board.getWidth(), board.getHeight())
   } else if (event.keyCode === 37) {
@@ -9,7 +11,12 @@ document.addEventListener('keyup', function(event){
     currentCell.up(board.getWidth(), board.getHeight())
   } else if (event.keyCode === 40) {
     currentCell.down(board.getHeight(board.getWidth(), board.getHeight()))
-  } else if (event.keyCode === 82) {
+  }
+})
+
+document.addEventListener('keyup', function(event){
+  // defining user keyboard controls
+  if (event.keyCode === 82) {
     restartLevel()
   } else if (event.keyCode === 27) {
     goToMenu()
@@ -20,6 +27,7 @@ document.addEventListener('keyup', function(event){
   if (currentCell.exitGame()){
     document.getElementById('game-screen').style.display = 'none'
     document.getElementById('winning-screen').style.display = 'block'
+    movesDisabled = true
     return
     
   }
@@ -28,6 +36,7 @@ document.addEventListener('keyup', function(event){
   if (currentCell.noMovesLeft()){
     document.getElementById('game-screen').style.display = 'none'
     document.getElementById('losing-screen').style.display = 'block'
+    movesDisabled = true
     return
     
   }

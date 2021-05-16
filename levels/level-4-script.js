@@ -3,7 +3,7 @@
 let board = new Board(8, 5)
 
 // creating a new player object
-let currentCell = new Player(1, 1, board, 24, [2, 6])
+let currentCell = new Player(1, 1, board, 15, [2, 6])
 
 // generating board cell objects
 for (i = 1; i <= board.getHeight(); i++) {

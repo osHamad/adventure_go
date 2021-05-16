@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Tiki Tropic';
   src: url('TikiTropic.eot');
-  src: 
+  src:
     url('TikiTropic.eot?#iefix') format('embedded-opentype'),
     url('TikiTropic.woff2') format('woff2'),
     url('TikiTropic.woff') format('woff'),
@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'Fredoka One';
-  src: 
+  src:
     url('FredokaOne-Regular.woff2') format('woff2'),
     url('FredokaOne-Regular.woff') format('woff');
   font-weight: normal;
@@ -100,7 +100,7 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-  
+
 @keyframes fadeInAnimation {
   0% { opacity: 0; }
   70% { opacity: 0; }
@@ -108,10 +108,9 @@ body {
 }
 
 @keyframes fadeInAnimationMenu {
-  0% { opacity:0; }
-  100% { opacity:1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
-
 
 #text-box {
   width: 50%;
@@ -145,7 +144,7 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-#text-box-next:after {
+#text-box-next::after {
   margin: 5px;
   content: '\25b6';
   animation: nextarrow 0.7s infinite alternate;
