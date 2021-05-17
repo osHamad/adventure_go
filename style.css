@@ -317,3 +317,10 @@ body {
   font-size: 50px;
   float: left;
 }
+
+#image-2,
+#image-3,
+#image-4,
+#image-5 {
+  display: none;
+}

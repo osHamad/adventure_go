@@ -16,7 +16,7 @@ const visualScript = [
   'Megumin also came with me.',
   'Kazuma..',
   'Oi, oi, I just said Megumin also came with me!!!',
-  'Ok fine, I\'ll go earn back what I spent.. Sigh'
+  'Ok fine, I\'ll go earn back what I spent.. Sigh..'
 ]
 
 // order for current text box speakers
