@@ -1,5 +1,5 @@
-# Adventure Go
 [![linter](https://github.com/osamaHamad-github/final_project/workflows/linter/badge.svg)](https://github.com/marketplace/actions/super-linter)
+# Adventure Go
 
 ## Breif Synopsis
 Adventure Go! is a puzzle solving game inspired by Helltaker but themed after the anime Konosuba.
@@ -17,7 +17,7 @@ This course made me discover something new: making games is actually really fun.
 I may have enjoyed making this game too much and slightly got carried away.
 Now let's continue.
 
-# Code Explination
+## Code Explanation
 ### Visual Novel
 So how does the visual novel at the beginning work?
 What I did was that everytime you clicked "Next", a counting variable got incremented by 1.
@@ -67,7 +67,7 @@ After the board is generated, each cell type was set to "walk".
 We want to add obstacles too, but that must be designed manually.
 A function takes in a column and row value, along with the cell type and creates a cell of that type in the specified location.
 
-# Resources Used
+## Resources Used
 a lot of html, css, javascript solutions used from here: [w3schools](https://www.w3schools.com/)<br />
 your boy stack overflow. help with debugging javascript code from this website: [stack overflow](https://stackoverflow.com/questions/)<br />
 css tutorials: [geeks for geeks](https://www.geeksforgeeks.org/css-tutorials/?ref=ghm)<br />
