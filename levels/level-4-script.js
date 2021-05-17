@@ -74,8 +74,10 @@ board.getCell([2, 6]).createCell('gate')
 
 board.getCell([3, 8]).createCell('exit')
 
+// buttons to restart
 document.getElementById('restart-button4').addEventListener('click', restartLevel)
 
 document.getElementById('main-menu-button4').addEventListener('click', goToMenu)
 
+// button to go to menu
 document.getElementById('main-menu-4').addEventListener('click', goToMenu)

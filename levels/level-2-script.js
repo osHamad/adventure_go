@@ -46,7 +46,7 @@ for (let i = 1; i <= board.getHeight(); i++) {
 document.getElementById(currentCell.cellName()).src = 'images/character.png'
 
 // creating obstacle object
-
+// void obstacles
 board.getCell([2, 3]).createCell('void')
 board.getCell([3, 3]).createCell('void')
 board.getCell([3, 4]).createCell('void')
@@ -57,31 +57,39 @@ board.getCell([6, 3]).createCell('void')
 board.getCell([6, 2]).createCell('void')
 board.getCell([6, 1]).createCell('void')
 
+// block obstacles
 board.getCell([1, 1]).createCell('block')
 board.getCell([2, 1]).createCell('block')
 board.getCell([5, 4]).createCell('block')
 board.getCell([6, 4]).createCell('block')
 
+// break obstacles
 board.getCell([2, 2]).createCell('break')
 board.getCell([6, 7]).createCell('break')
 board.getCell([6, 6]).createCell('break')
 board.getCell([5, 6]).createCell('break')
 
+// movable obstacles
 board.getCell([3, 5]).createCell('move')
 board.getCell([3, 6]).createCell('move')
 board.getCell([3, 7]).createCell('move')
 
+// spike obstacles
 board.getCell([2, 4]).createCell('spike')
 board.getCell([2, 5]).createCell('spike')
 board.getCell([3, 2]).createCell('spike')
 board.getCell([4, 6]).createCell('spike')
 
+// exit
 board.getCell([6, 5]).createCell('exit')
 
+// function to restart level
 document.getElementById('restart-button2').addEventListener('click', restartLevel)
 
+// functions to return to menu
 document.getElementById('main-menu-button2').addEventListener('click', goToMenu)
 
 document.getElementById('main-menu-2').addEventListener('click', goToMenu)
 
+// go to next level
 document.getElementById('next-level-button2').addEventListener('click', nextLevel)

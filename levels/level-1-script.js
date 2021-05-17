@@ -46,6 +46,7 @@ for (let i = 1; i <= board.getHeight(); i++) {
 document.getElementById(currentCell.cellName()).src = 'images/character.png'
 
 // creating obstacle object
+// void obstacles
 board.getCell([1, 1]).createCell('void')
 board.getCell([1, 2]).createCell('void')
 board.getCell([1, 3]).createCell('void')
@@ -58,28 +59,35 @@ board.getCell([2, 7]).createCell('void')
 board.getCell([3, 7]).createCell('void')
 board.getCell([4, 7]).createCell('void')
 
+// block obstacles
 board.getCell([1, 4]).createCell('block')
 board.getCell([4, 5]).createCell('block')
 board.getCell([4, 4]).createCell('block')
 board.getCell([4, 3]).createCell('block')
 board.getCell([5, 7]).createCell('block')
 
+// movable obstacles
 board.getCell([5, 2]).createCell('move')
 board.getCell([6, 2]).createCell('move')
 board.getCell([5, 5]).createCell('move')
 board.getCell([6, 4]).createCell('move')
 
+// breakable obstacles
 board.getCell([2, 2]).createCell('break')
 board.getCell([2, 4]).createCell('break')
 board.getCell([3, 5]).createCell('break')
 board.getCell([3, 3]).createCell('break')
 
+// exit cell
 board.getCell([6, 7]).createCell('exit')
 
+// function to restart game
 document.getElementById('restart-button1').addEventListener('click', restartLevel)
 
+// functions to return to menu
 document.getElementById('main-menu-button1').addEventListener('click', goToMenu)
 
 document.getElementById('main-menu-1').addEventListener('click', goToMenu)
 
+// go to the next level
 document.getElementById('next-level-button1').addEventListener('click', nextLevel)
