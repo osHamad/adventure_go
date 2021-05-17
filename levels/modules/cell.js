@@ -1,9 +1,12 @@
+/*global Cell */
+/*eslint quote-props: ["error", "always"]*/
+
 // this class is used for generating cell type objects for game levels
 class Cell {
-  constructor (row, col, cellType='walk') {
+  constructor (row, col, cellType = 'walk') {
     // row and column of the cell on the grid is recorded
-    this.row = row;
-    this.col = col;
+    this.row = row
+    this.col = col
 
     // cell type must be specified
     // each cell has a different game attribute

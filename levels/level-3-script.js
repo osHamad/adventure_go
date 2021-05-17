@@ -1,35 +1,37 @@
+/*global Board, Player, restartLevel, goToMenu, nextLevel */
+
 // board that will be accessed later to make the level
 // board is an array of generated cell objects
-let board = new Board(8, 6)
+const board = new Board(8, 6)
 
 // creating a new player object
-let currentCell = new Player(3, 8, board, 28, [2, 7])
+const currentCell = new Player(3, 8, board, 28, [2, 7])
 
 // generating board cell objects
-for (i = 1; i <= board.getHeight(); i++) {
-  for (j = 1; j <= board.getWidth(); j++) {
+for (let i = 1; i <= board.getHeight(); i++) {
+  for (let j = 1; j <= board.getWidth(); j++) {
     board.addCell(new Cell(i, j))
   }
 }
 
 // creating cell divs in html
-for (i = 1; i <= board.getHeight(); i++) {
+for (let i = 1; i <= board.getHeight(); i++) {
   // creating a table row element with id row-i
-  let tableRow = document.createElement("tr")
+  const tableRow = document.createElement('tr')
   tableRow.id = `row-${i}`
 
   // adding the table row to our table with id grid
-  let table = document.getElementById("grid")
-  table.appendChild(tableRow);
+  const table = document.getElementById('grid')
+  table.appendChild(tableRow)
 
-  for (j = 1; j <= board.getWidth(); j++) {
+  for (let j = 1; j <= board.getWidth(); j++) {
     // creating table cell with id cell-i-j
-    let tableCell = document.createElement('td')
+    const tableCell = document.createElement('td')
 
     // adding the cell to row i
     tableRow.appendChild(tableCell)
 
-    let tableImage = document.createElement('img')
+    const tableImage = document.createElement('img')
 
     tableImage.id = `cell-${i}-${j}`
 

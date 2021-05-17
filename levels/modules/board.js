@@ -1,10 +1,12 @@
+/*global Board */
+
 // board class that represents the character's level
 class Board {
   constructor (width, height) {
     // the dimentions of the map are stored
     // this will help with generating the grid
-    this.width = width;
-    this.height = height;
+    this.width = width
+    this.height = height
 
     // generated board cells are added to this dictionary
     this.boardCells = {}
