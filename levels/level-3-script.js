@@ -1,4 +1,5 @@
-/*global Board, Player, restartLevel, goToMenu, nextLevel */
+/* global Cell, Board, Player, restartLevel, goToMenu, nextLevel */
+/* eslint-disable no-unused-vars */
 
 // board that will be accessed later to make the level
 // board is an array of generated cell objects
@@ -38,7 +39,6 @@ for (let i = 1; i <= board.getHeight(); i++) {
     tableCell.appendChild(tableImage)
 
     tableImage.src = 'images/granite-floor.png'
-    
   }
 }
 

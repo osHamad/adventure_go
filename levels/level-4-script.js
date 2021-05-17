@@ -1,4 +1,5 @@
-/*global Board, Player, restartLevel, goToMenu, nextLevel */
+/* global Cell, Board, Player, restartLevel, goToMenu, nextLevel */
+/* eslint-disable no-unused-vars */
 
 // board that will be accessed later to make the level
 // board is an array of generated cell objects
@@ -26,19 +27,18 @@ for (let i = 1; i <= board.getHeight(); i++) {
 
   for (let j = 1; j <= board.getWidth(); j++) {
     // creating table cell with id cell-i-j
-    let tableCell = document.createElement('td')
+    const tableCell = document.createElement('td')
 
     // adding the cell to row i
     tableRow.appendChild(tableCell)
 
-    let tableImage = document.createElement('img')
+    const tableImage = document.createElement('img')
 
     tableImage.id = `cell-${i}-${j}`
 
     tableCell.appendChild(tableImage)
 
     tableImage.src = 'images/granite-floor.png'
-    
   }
 }
 

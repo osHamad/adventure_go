@@ -1,4 +1,4 @@
-/*global Board */
+/* eslint-disable no-unused-vars */
 
 // board class that represents the character's level
 class Board {

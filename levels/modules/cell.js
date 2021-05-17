@@ -1,4 +1,4 @@
-/*global Cell */
+/* eslint-disable no-unused-vars */
 /*eslint quote-props: ["error", "always"]*/
 
 // this class is used for generating cell type objects for game levels

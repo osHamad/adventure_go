@@ -1,10 +1,10 @@
+/* eslint-disable no-unused-vars */
 /*global Player */
-
 
 // this is the player class
 // your character's information and functions are stored and executed here
 class Player {
-  constructor (row, col, board, movesLeft, gateLocation=null) {
+  constructor (row, col, board, movesLeft, gateLocation = null) {
     // row and column to help identify the player's current location
     this.row = row
     this.col = col
@@ -111,12 +111,6 @@ class Player {
     }
   }
 
-
-
-
-
-
-
  // when the player wants to go right, this method is called
   direction (width, height, futureLocation, addToCol, addToRow, moveFuture, moveCell, passCondition) {
     const moveTypeFuture = this.board.getCell(moveFuture)
@@ -133,7 +127,7 @@ class Player {
       }
 
       if (this.checkForMove(futureLocation)) {
-        let isMoveType = this.board.getCell(futureLocation)
+        const isMoveType = this.board.getCell(futureLocation)
         if (moveTypeFuture.getType() === 'walk') {
           isMoveType.assignType('walk')
           isMoveType.createCell('walk')
@@ -141,7 +135,7 @@ class Player {
           moveMoveCell.assignType('move')
           moveMoveCell.createCell('move')
 
-          this.movesLeft --
+          this.movesLeft--
           
           return
         } else {
@@ -155,11 +149,11 @@ class Player {
       }
 
       if (this.checkForSpike(futureLocation)) {
-        this.movesLeft --
+        this.movesLeft--
       }
 
       if (this.checkForKey(futureLocation)) {
-        let isKeyType = this.board.getCell(this.gateLocation)
+        const isKeyType = this.board.getCell(this.gateLocation)
         isKeyType.assignType('walk')
         isKeyType.createCell('walk')
       }
@@ -171,28 +165,14 @@ class Player {
 
       document.getElementById(this.cellName()).src = this.characterImage
 
-      this.movesLeft --
+      this.movesLeft--
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
   // when the player wants to go right, this method is called
   right (width, height) {
     const futureLocation = [this.row, this.col + 1]
-    const moveFuture = [futureLocation[0], futureLocation[1]+1]
+    const moveFuture = [futureLocation[0], futureLocation[1] + 1]
     const moveCell = [this.row, this.col + 2]
     this.direction (width, height, futureLocation, 1, 0, moveFuture, moveCell, this.col < width)
   }
@@ -215,7 +195,7 @@ class Player {
 
   down (width, height) {
     const futureLocation = [this.row + 1, this.col]
-    const moveFuture = [futureLocation[0]+1, futureLocation[1]]
+    const moveFuture = [futureLocation[0] + 1, futureLocation[1]]
     const moveCell = [this.row + 2, this.col]
     this.direction (width, height, futureLocation, 0, 1, moveFuture, moveCell, this.row < height)
   }

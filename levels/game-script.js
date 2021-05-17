@@ -1,4 +1,5 @@
-/*global currentCell, board, nextLevel */
+/* global currentCell, board, nextLevel */
+/* eslint-disable no-unused-vars */
 
 let movesDisabled = false
 
@@ -51,7 +52,6 @@ function restartLevel () {
 }
 
 function goToMenu () {
-  
   window.location.href = 'https://finalproject.osamahamad0.repl.co/main-menu.html'
 }
 
@@ -59,7 +59,7 @@ function nextLevel () {
   const levelLocation = {
     'https://finalproject.osamahamad0.repl.co/levels/level-1.html': 'https://finalproject.osamahamad0.repl.co/levels/level-2.html',
     'https://finalproject.osamahamad0.repl.co/levels/level-2.html': 'https://finalproject.osamahamad0.repl.co/levels/level-3.html',
-    'https://finalproject.osamahamad0.repl.co/levels/level-3.html': 'https://finalproject.osamahamad0.repl.co/levels/level-4.html',
+    'https://finalproject.osamahamad0.repl.co/levels/level-3.html': 'https://finalproject.osamahamad0.repl.co/levels/level-4.html'
   }
 
   window.location.href = levelLocation[window.location.href]
