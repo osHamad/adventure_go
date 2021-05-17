@@ -4,14 +4,14 @@ document.getElementById('mute-button-2').addEventListener('click', muteButton2)
 
 let volumeNumber = 0.1
 
-document.getElementById('settings-button').addEventListener('click', function(){
+document.getElementById('settings-button').addEventListener('click', function () {
   document.getElementById('start-menu').style.display = 'none'
   document.getElementById('settings').style.display = 'block'
 })
 
-document.getElementById('volume-increase').addEventListener('click', function(){
+document.getElementById('volume-increase').addEventListener('click', function () {
   const music = document.getElementById('music')
-  let vol = document.getElementById('volume-number')
+  const vol = document.getElementById('volume-number')
   if (volumeNumber < 0.9) {
     volumeNumber += 0.1
     music.volume = volumeNumber
@@ -19,9 +19,9 @@ document.getElementById('volume-increase').addEventListener('click', function(){
   }
 })
 
-document.getElementById('volume-decrease').addEventListener('click', function(){
+document.getElementById('volume-decrease').addEventListener('click', function () {
   const music = document.getElementById('music')
-  let vol = document.getElementById('volume-number')
+  const vol = document.getElementById('volume-number')
   if (volumeNumber > 0.1) {
     volumeNumber -= 0.1
     music.volume = volumeNumber
@@ -29,8 +29,7 @@ document.getElementById('volume-decrease').addEventListener('click', function(){
   }
 })
 
-
-function muteButton1() {
+function muteButton1 () {
   const music = document.getElementById('music')
   const buttonImage = document.getElementById('mute-button-image-1')
   // checks if music is paused and plays the music
@@ -44,7 +43,7 @@ function muteButton1() {
   }
 }
 
-function muteButton2() {
+function muteButton2 () {
   const music = document.getElementById('music')
   const buttonImage = document.getElementById('mute-button-image-2')
   // checks if music is paused and plays the music
@@ -60,15 +59,16 @@ function muteButton2() {
 
 // this is the function that will play music when menu loads
 function playMenuMusic () {
-  let menuMusic = document.getElementById('music')
+  const menuMusic = document.getElementById('music')
   menuMusic.loop = true
   menuMusic.volume = volumeNumber
   menuMusic.play()
 }
 
 // button to start and play the game
-document.getElementById('play-button').addEventListener('click', function(){
+document.getElementById('play-button').addEventListener('click', function () {
   const buttonImage = document.getElementById('mute-button-image-2')
+  const music = document.getElementById('music')
   if (music.paused) {
     buttonImage.src = 'images/mute-button.png'
   } else if (music.play) {
@@ -81,23 +81,27 @@ document.getElementById('play-button').addEventListener('click', function(){
 })
 
 // button level navigator level 1
-document.getElementById('level-1').addEventListener('click', function(){window.location.href = '/levels/level-1.html'
+document.getElementById('level-1').addEventListener('click', function (){
+  window.location.href = '/levels/level-1.html'
 })
 
 // button level navigator level 2
-document.getElementById('level-2').addEventListener('click', function(){window.location.href = '/levels/level-2.html'
+document.getElementById('level-2').addEventListener('click', function (){
+  window.location.href = '/levels/level-2.html'
 })
 
 // button level navigator level 3
-document.getElementById('level-3').addEventListener('click', function(){window.location.href = '/levels/level-3.html'
+document.getElementById('level-3').addEventListener('click', function (){
+  window.location.href = '/levels/level-3.html'
 })
 
 // button level navigator level 4
-document.getElementById('level-4').addEventListener('click', function(){window.location.href = '/levels/level-4.html'
+document.getElementById('level-4').addEventListener('click', function (){
+  window.location.href = '/levels/level-4.html'
 })
 
 // button to view the code
-document.getElementById('code-button').addEventListener('click', function(){
+document.getElementById('code-button').addEventListener('click', function (){
   window.open('https://github.com/osamaHamad-github/final_project')
 })
 

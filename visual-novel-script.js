@@ -9,7 +9,7 @@ function clickSound () {
 let visualCounter = 0
 
 // the script of what is said in the visual novel
-visualScript = [
+const visualScript = [
   'Kazuma, Kazuma!! All of our money somehow disappeared!!',
   'Hmm, money? Oh that..',
   'I spent it all yesterday at the tavern.',
@@ -17,7 +17,6 @@ visualScript = [
   'Kazuma..',
   'Oi, oi, I just said Megumin also came with me!!!',
   'Ok fine, I\'ll go earn back what I spent.. Sigh'
-
 ]
 
 // order for current text box speakers
@@ -56,18 +55,16 @@ const visualImages = {
 document.getElementById('text-box-next').addEventListener('click', nextFrame)
 function nextFrame () {
   if (visualCounter < visualScript.length) {
-    let text = document.getElementById('text-box-text')
-    let speaker = document.getElementById('text-box-speaker')
+    const text = document.getElementById('text-box-text')
+    const speaker = document.getElementById('text-box-speaker')
     text.innerText = visualScript[visualCounter]
     speaker.innerText = visualSpeaker[visualCounter]
     speaker.style.borderColor = visualSpeakerColor[visualCounter]
     speaker.style.webkitTextStrokeColor = visualSpeakerColor[visualCounter]
     document.getElementById('image-1').src = visualImages[visualCounter]
-    visualCounter ++
-    
+    visualCounter++
   } else {
     window.location.href = 'https://finalproject.osamahamad0.repl.co/main-menu.html'
-    playMenuMusic()
   }
   return 0
 }

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-/*global Player */
+/* global Player */
 
 // this is the player class
 // your character's information and functions are stored and executed here
@@ -111,7 +111,7 @@ class Player {
     }
   }
 
- // when the player wants to go right, this method is called
+  // when the player wants to go right, this method is called
   direction (width, height, futureLocation, addToCol, addToRow, moveFuture, moveCell, passCondition) {
     const moveTypeFuture = this.board.getCell(moveFuture)
     const moveMoveCell = this.board.getCell(moveCell)
@@ -122,7 +122,7 @@ class Player {
         return
       }
       if (this.checkForBreak(futureLocation)) {
-        this.movesLeft --
+        this.movesLeft--
         return
       }
 
@@ -136,7 +136,6 @@ class Player {
           moveMoveCell.createCell('move')
 
           this.movesLeft--
-          
           return
         } else {
           return
@@ -170,30 +169,28 @@ class Player {
   }
 
   // when the player wants to go right, this method is called
-  right (width, height) {
+  right(width, height) {
     const futureLocation = [this.row, this.col + 1]
     const moveFuture = [futureLocation[0], futureLocation[1] + 1]
     const moveCell = [this.row, this.col + 2]
     this.direction (width, height, futureLocation, 1, 0, moveFuture, moveCell, this.col < width)
   }
 
-
-  left (width, height) {
+  left(width, height) {
     const futureLocation = [this.row, this.col - 1]
     const moveFuture = [futureLocation[0], futureLocation[1]-1]
     const moveCell = [this.row, this.col - 2]
-    this.direction (width, height, futureLocation, -1, 0, moveFuture, moveCell, this.col > 1)
+    this.direction (width, height, futureLocation, - 1, 0, moveFuture, moveCell, this.col > 1)
   }
 
-
-  up (width, height) {
+  up(width, height) {
     const futureLocation = [this.row - 1, this.col]
     const moveFuture = [futureLocation[0] - 1, futureLocation[1]]
     const moveCell = [this.row - 2, this.col]
-    this.direction (width, height, futureLocation, 0, -1, moveFuture, moveCell, this.row > 1)
+    this.direction (width, height, futureLocation, 0, - 1, moveFuture, moveCell, this.row > 1)
   }
 
-  down (width, height) {
+  down(width, height) {
     const futureLocation = [this.row + 1, this.col]
     const moveFuture = [futureLocation[0] + 1, futureLocation[1]]
     const moveCell = [this.row + 2, this.col]
