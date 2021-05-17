@@ -13,6 +13,8 @@ class Cell {
     // types include block, break, exit, key, walk, void, locked
     this.cellType = cellType
 
+    // each cell is linked to an image
+    // the cell type corresponds to an image in the dictionary below
     this.cellTypeImage = {
       'walk': 'images/granite-floor.png',
       'block': 'images/rock.png',
@@ -51,9 +53,11 @@ class Cell {
     this.cellType = newType
   }
 
+  // this method creates a new, not pre-existing cell, taking the cell type as the parameter
   createCell (newType) {
     this.assignType(newType)
 
+    // gets the cell image and places it on the board
     document.getElementById(this.cellName()).src = this.cellTypeImage[this.getType()]
   }
 }

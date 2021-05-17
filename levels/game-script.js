@@ -1,11 +1,16 @@
 /* global currentCell, board */
 /* eslint-disable no-unused-vars */
 
+// will be set to true when player finishes the level
+// allows the game controls to be disabled after player loses
 let movesDisabled = false
 
 document.addEventListener('keyup', function (event) {
   // defining user keyboard controls
+  // if moves disabled, controls will not work
   if (movesDisabled) { return }
+
+  // each key calls a different direction method from player class object
   if (event.keyCode === 39) {
     currentCell.right(board.getWidth(), board.getHeight())
   } else if (event.keyCode === 37) {
@@ -19,6 +24,8 @@ document.addEventListener('keyup', function (event) {
 
 document.addEventListener('keyup', function (event) {
   // defining user keyboard controls
+  // if R is clicked, level will restart
+  // if escape is clicked, player will go to main menu
   if (event.keyCode === 82) {
     restartLevel()
   } else if (event.keyCode === 27) {
@@ -47,20 +54,26 @@ document.addEventListener('keyup', function (event) {
   moveDisplayer.innerText = currentCell.movesNumber()
 })
 
+// this function reloads the current page which will restart the level
 function restartLevel () {
   location.reload()
 }
 
+// changes the href location to the main menu html page
 function goToMenu () {
   window.location.href = 'https://finalproject.osamahamad0.repl.co/main-menu.html'
 }
 
+// allows the program to know what the next level will be
 function nextLevel () {
+  // a dictionary that links the current level with relatively next level
   const levelLocation = {
     'https://finalproject.osamahamad0.repl.co/levels/level-1.html': 'https://finalproject.osamahamad0.repl.co/levels/level-2.html',
     'https://finalproject.osamahamad0.repl.co/levels/level-2.html': 'https://finalproject.osamahamad0.repl.co/levels/level-3.html',
     'https://finalproject.osamahamad0.repl.co/levels/level-3.html': 'https://finalproject.osamahamad0.repl.co/levels/level-4.html'
   }
 
+  // next level will be fetched from the level location dictionary
+  // href will be set to that page, redirecting the user to next level
   window.location.href = levelLocation[window.location.href]
 }

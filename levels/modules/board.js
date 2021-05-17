@@ -3,12 +3,13 @@
 // board class that represents the character's level
 class Board {
   constructor (width, height) {
-    // the dimentions of the map are stored
-    // this will help with generating the grid
+    // the dimentions of the grid are stored
+    // this will help with generating the grid and deciding player boundries
     this.width = width
     this.height = height
 
     // generated board cells are added to this dictionary
+    // board cells will be fetched later by player and cell objects
     this.boardCells = {}
   }
 
