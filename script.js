@@ -81,27 +81,27 @@ document.getElementById('play-button').addEventListener('click', function () {
 })
 
 // button level navigator level 1
-document.getElementById('level-1').addEventListener('click', function (){
+document.getElementById('level-1').addEventListener('click', function () {
   window.location.href = '/levels/level-1.html'
 })
 
 // button level navigator level 2
-document.getElementById('level-2').addEventListener('click', function (){
+document.getElementById('level-2').addEventListener('click', function () {
   window.location.href = '/levels/level-2.html'
 })
 
 // button level navigator level 3
-document.getElementById('level-3').addEventListener('click', function (){
+document.getElementById('level-3').addEventListener('click', function () {
   window.location.href = '/levels/level-3.html'
 })
 
 // button level navigator level 4
-document.getElementById('level-4').addEventListener('click', function (){
+document.getElementById('level-4').addEventListener('click', function () {
   window.location.href = '/levels/level-4.html'
 })
 
 // button to view the code
-document.getElementById('code-button').addEventListener('click', function (){
+document.getElementById('code-button').addEventListener('click', function () {
   window.open('https://github.com/osamaHamad-github/final_project')
 })
 
@@ -119,11 +119,6 @@ function hoverSound () {
   sound.play()
 }
 
-function clickSound () {
-  const sound = document.getElementById('click-sound')
-  sound.play()
-}
-
 // this is the button to go back to the menu
 document.getElementById('back-to-menu-1').addEventListener('click', backToMenu)
 
@@ -131,6 +126,7 @@ document.getElementById('back-to-menu-1').addEventListener('click', backToMenu)
 document.getElementById('back-to-menu-2').addEventListener('click', backToMenu)
 
 function backToMenu () {
+  const music = document.getElementById('music')
   const buttonImage = document.getElementById('mute-button-image-1')
   if (music.paused) {
     buttonImage.src = 'images/mute-button.png'
