@@ -155,7 +155,6 @@ document.getElementById('level-2').addEventListener('mouseover', hoverSound)
 document.getElementById('level-3').addEventListener('mouseover', hoverSound)
 document.getElementById('level-4').addEventListener('mouseover', hoverSound)
 
-
 // plays the hovering sound in menu and selector
 function hoverSound () {
   const sound = document.getElementById('hover-sound')
