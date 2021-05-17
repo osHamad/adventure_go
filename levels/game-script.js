@@ -1,4 +1,4 @@
-/* global currentCell, board, nextLevel */
+/* global currentCell, board */
 /* eslint-disable no-unused-vars */
 
 let movesDisabled = false

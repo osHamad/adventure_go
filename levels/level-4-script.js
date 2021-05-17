@@ -1,4 +1,4 @@
-/* global Cell, Board, Player, restartLevel, goToMenu, nextLevel */
+/* global Cell, Board, Player, restartLevel, goToMenu */
 /* eslint-disable no-unused-vars */
 
 // board that will be accessed later to make the level

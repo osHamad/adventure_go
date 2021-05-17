@@ -169,31 +169,31 @@ class Player {
   }
 
   // when the player wants to go right, this method is called
-  right(width, height) {
+  right (width, height) {
     const futureLocation = [this.row, this.col + 1]
     const moveFuture = [futureLocation[0], futureLocation[1] + 1]
     const moveCell = [this.row, this.col + 2]
-    this.direction (width, height, futureLocation, 1, 0, moveFuture, moveCell, this.col < width)
+    this.direction(width, height, futureLocation, 1, 0, moveFuture, moveCell, this.col < width)
   }
 
-  left(width, height) {
+  left (width, height) {
     const futureLocation = [this.row, this.col - 1]
-    const moveFuture = [futureLocation[0], futureLocation[1]-1]
+    const moveFuture = [futureLocation[0], futureLocation[1] - 1]
     const moveCell = [this.row, this.col - 2]
-    this.direction (width, height, futureLocation, - 1, 0, moveFuture, moveCell, this.col > 1)
+    this.direction(width, height, futureLocation, -1, 0, moveFuture, moveCell, this.col > 1)
   }
 
-  up(width, height) {
+  up (width, height) {
     const futureLocation = [this.row - 1, this.col]
     const moveFuture = [futureLocation[0] - 1, futureLocation[1]]
     const moveCell = [this.row - 2, this.col]
-    this.direction (width, height, futureLocation, 0, - 1, moveFuture, moveCell, this.row > 1)
+    this.direction(width, height, futureLocation, 0, -1, moveFuture, moveCell, this.row > 1)
   }
 
-  down(width, height) {
+  down (width, height) {
     const futureLocation = [this.row + 1, this.col]
     const moveFuture = [futureLocation[0] + 1, futureLocation[1]]
     const moveCell = [this.row + 2, this.col]
-    this.direction (width, height, futureLocation, 0, 1, moveFuture, moveCell, this.row < height)
+    this.direction(width, height, futureLocation, 0, 1, moveFuture, moveCell, this.row < height)
   }
 }
