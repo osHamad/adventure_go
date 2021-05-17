@@ -1,5 +1,6 @@
 document.getElementById('text-box-next').addEventListener('click', clickSound)
 
+// play clicking sound when next button is clicked
 function clickSound () {
   const sound = document.getElementById('click-sound')
   sound.play()
@@ -52,19 +53,34 @@ const visualImages = {
   6: 'visual-novel/fifth.png'
 }
 
-document.getElementById('text-box-next').addEventListener('click', nextFrame)
-function nextFrame () {
+// makes changes when the next button is clicked
+document.getElementById('text-box-next').addEventListener('click', function () {
+  // ensures that there are still frames left in the visual novel
+  // if not, the visual novel will end and main menu will appear
   if (visualCounter < visualScript.length) {
+    // the html box with all the characters' subtitles
     const text = document.getElementById('text-box-text')
+
+    // changes the speaker according to the index
     const speaker = document.getElementById('text-box-speaker')
+
+    // the script and the speaker are set to the dictionary value of the index
     text.innerText = visualScript[visualCounter]
     speaker.innerText = visualSpeaker[visualCounter]
+
+    // the speaker name border changes according to the speaker
+    // same thing with the text outline
     speaker.style.borderColor = visualSpeakerColor[visualCounter]
     speaker.style.webkitTextStrokeColor = visualSpeakerColor[visualCounter]
+
+    // the current image changes to the current dict value of index
     document.getElementById('image-1').src = visualImages[visualCounter]
+
+    // index is increased by one each time
     visualCounter++
   } else {
+    // relocated to main menu if no more pictures left
     window.location.href = 'https://finalproject.osamahamad0.repl.co/main-menu.html'
   }
   return 0
-}
+})
