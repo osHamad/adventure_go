@@ -125,21 +125,12 @@ function clickSound () {
 }
 
 // this is the button to go back to the menu
-document.getElementById('back-to-menu-1').addEventListener('click', function(){
-  const buttonImage = document.getElementById('mute-button-image-1')
-  if (music.paused) {
-    buttonImage.src = 'images/mute-button.png'
-  } else if (music.play) {
-    buttonImage.src = 'images/unmute-button.png'
-  }
-  const mainMenu = document.getElementById('start-menu')
-  const levelSelector = document.getElementById('level-buttons')
-  levelSelector.style.display = 'none'
-  mainMenu.style.display = 'block'
-})
+document.getElementById('back-to-menu-1').addEventListener('click', backToMenu)
 
 // this is the button to go back to the menu
-document.getElementById('back-to-menu-2').addEventListener('click', function(){
+document.getElementById('back-to-menu-2').addEventListener('click', backToMenu)
+
+function backToMenu () {
   const buttonImage = document.getElementById('mute-button-image-1')
   if (music.paused) {
     buttonImage.src = 'images/mute-button.png'
@@ -150,4 +141,4 @@ document.getElementById('back-to-menu-2').addEventListener('click', function(){
   const settingSelector = document.getElementById('settings')
   settingSelector.style.display = 'none'
   mainMenu.style.display = 'block'
-})
+}
