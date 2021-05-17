@@ -68,9 +68,9 @@ We want to add obstacles too, but that must be designed manually.
 A function takes in a column and row value, along with the cell type and creates a cell of that type in the specified location.
 
 # Resources Used
-[a lot of html, css, javascript solutions used from here: ](https://www.w3schools.com/)<br />
-[your boy stack overflow. help with debugging javascript code from this website: ](https://stackoverflow.com/questions/)<br />
-[css tutorials: ](https://www.geeksforgeeks.org/css-tutorials/?ref=ghm)<br />
-[font package converter: ](https://transfonter.org/)<br />
-[downloaded fonts from here: ](https://fonts.google.com/specimen/Fredoka+One#standard-styles)<br />
-[button style inspiration: ](https://css-tricks.com/perfect-full-page-background-image/)
+a lot of html, css, javascript solutions used from here: [w3schools](https://www.w3schools.com/)<br />
+your boy stack overflow. help with debugging javascript code from this website: [stack overflow](https://stackoverflow.com/questions/)<br />
+css tutorials: [geeks for geeks](https://www.geeksforgeeks.org/css-tutorials/?ref=ghm)<br />
+font package converter: [font transformer](https://transfonter.org/)<br />
+downloaded fonts from here: [google fonts](https://fonts.google.com/specimen/Fredoka+One#standard-styles)<br />
+button style inspiration: [css tricks](https://css-tricks.com/perfect-full-page-background-image/)
