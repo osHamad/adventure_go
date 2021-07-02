@@ -2,20 +2,10 @@
 [![linter](https://github.com/osamaHamad-github/final_project/workflows/linter/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## Breif Synopsis
-Adventure Go! is a puzzle solving game inspired by Helltaker but themed after the anime Konosuba.
+Adventure Go! is a puzzle solving game inspired by Helltaker but themed after the show Konosuba.
 The game starts off with a short visual novel about a problem with our main character Kazuma and his companion Aqua.
 Kazuma used all of his money and now he has to look for treasures to make up for the losses.
 Will you be able to guide Kazuma to the treasures?
-
-Helltaker on steam (good game, would reccomend): [Helltaker](https://store.steampowered.com/app/1289310/Helltaker/)<br />
-Konosuba on My Anime List: [KonoSuba season 1](https://myanimelist.net/anime/30831/Kono_Subarashii_Sekai_ni_Shukufuku_wo)
-
-## A Few Words from Me
-Before we continue, I just wanted to say thank you to Mr. DiMauro and everyone else in the class for making this such an enjoyable course.
-Everyone was very welcoming and I really appreciated that!
-This course made me discover something new: making games is actually really fun.
-I may have enjoyed making this game too much and slightly got carried away.
-Now let's continue.
 
 ## Code Explanation
 ### Visual Novel
@@ -69,7 +59,7 @@ A function takes in a column and row value, along with the cell type and creates
 
 ## Resources Used
 a lot of html, css, javascript solutions used from here: [w3schools](https://www.w3schools.com/)<br />
-your boy stack overflow. help with debugging javascript code from this website: [stack overflow](https://stackoverflow.com/questions/)<br />
+help with debugging javascript code from this website: [stack overflow](https://stackoverflow.com/questions/)<br />
 css tutorials: [geeks for geeks](https://www.geeksforgeeks.org/css-tutorials/?ref=ghm)<br />
 font package converter: [font transformer](https://transfonter.org/)<br />
 downloaded fonts from here: [google fonts](https://fonts.google.com/specimen/Fredoka+One#standard-styles)<br />
