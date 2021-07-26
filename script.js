@@ -143,7 +143,7 @@ document.getElementById('level-4').addEventListener('click', function () {
 
 // button to view the code
 document.getElementById('code-button').addEventListener('click', function () {
-  window.open('https://github.com/osamaHamad-github/final_project')
+  window.open('https://github.com/osHamad/adventure_go')
 })
 
 // make sound when hovering over menu page buttons
