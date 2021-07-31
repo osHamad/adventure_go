@@ -80,7 +80,7 @@ document.getElementById('text-box-next').addEventListener('click', function () {
     visualCounter++
   } else {
     // relocated to main menu if no more pictures left
-    window.location.href = 'https://finalproject.osamahamad0.repl.co/main-menu.html'
+    window.location.href = 'http://127.0.0.1:5500/main-menu.html'
   }
   return 0
 })

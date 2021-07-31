@@ -61,16 +61,16 @@ function restartLevel () {
 
 // changes the href location to the main menu html page
 function goToMenu () {
-  window.location.href = 'https://finalproject.osamahamad0.repl.co/main-menu.html'
+  window.location.href = 'http://127.0.0.1:5500/main-menu.html'
 }
 
 // allows the program to know what the next level will be
 function nextLevel () {
   // a dictionary that links the current level with relatively next level
   const levelLocation = {
-    'https://finalproject.osamahamad0.repl.co/levels/level-1.html': 'https://finalproject.osamahamad0.repl.co/levels/level-2.html',
-    'https://finalproject.osamahamad0.repl.co/levels/level-2.html': 'https://finalproject.osamahamad0.repl.co/levels/level-3.html',
-    'https://finalproject.osamahamad0.repl.co/levels/level-3.html': 'https://finalproject.osamahamad0.repl.co/levels/level-4.html'
+    'http://127.0.0.1:5500/levels/level-1.html': 'http://127.0.0.1:5500/levels/level-2.html',
+    'http://127.0.0.1:5500/levels/level-2.html': 'http://127.0.0.1:5500/levels/level-3.html',
+    'http://127.0.0.1:5500/levels/level-3.html': 'http://127.0.0.1:5500/levels/level-4.html'
   }
 
   // next level will be fetched from the level location dictionary
